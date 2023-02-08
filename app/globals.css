@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+.prim-link {
+  @apply animate bg-amber-400 p-6 text-black mx-auto text-xl sm:text-3xl font-semibold hover:text-white border hover:bg-lime-700 hover:border-amber-800 rounded-full hover:shadow-xl shadow-xl
+}
+.animate {
+  @apply transition ease-in hover:scale-110 duration-300
+}
+@tailwind utilities;
+
+body {
+  background: #e2e3cd;
+}
