@@ -26,14 +26,18 @@ export default function Home() {
               <h1>Hotel Landmark,</h1>
               <h1>Malda</h1>
             </div>
-            <p className="font-thin text-center text-2xl sm:text-xl md:text-3xl my-12 italic">
+            <p className="font-thin text-center text-2xl sm:text-xl md:text-3xl my-8 italic">
               Feel the difference
             </p>
+            <div className="flex justify-center -space-x-14">
+              <div className="mix-blend-multiply bg-amber-300 rounded-full w-24 h-24"></div>
+              <div className="mix-blend-multiply bg-yellow-500 rounded-full w-24 h-24"></div>
+            </div>
             <div className="block grid-col-1 content-center gap-4 text-center">
               {/* <Link href = '/book' className="prim-link">Book Your Stay</Link> */}
               <div className='text-xl'>Call us at <strong>+91-9641693184</strong> or whatsapp here 
-                <Link href="https://wa.me/919641693184">
-                    <div className="text-center text-3xl bg-lime-700 hover:bg-lime-800 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-lime-600">9641693184</div>
+                <Link href="https://wa.me/919641693184" target="_blank">
+                    <div className=" transition duration-200 ease-in-out text-center text-3xl bg-lime-700 hover:bg-lime-800 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-lime-600">9641693184</div>
                 </Link> 
                 for booking purpose or any other queries.
               </div>
@@ -76,11 +80,11 @@ export default function Home() {
               Whatsapp us 
               <span className="inline-flex items-baseline">
               <FontAwesomeIcon icon={faPhone} color="violet" width={40}/>
-              <Link href="http://wa.me/919435117480">
-                <div className='underline underline-offset-4 text-blue-700'>&nbsp;here&nbsp;</div>
+              <Link href="http://wa.me/919435117480" target="_blank">
+                <div className='underline underline-offset-4 text-blue-700  transition duration-200 ease-in-out'>&nbsp;here&nbsp;</div>
               </Link>
               </span>
-              for any complaints. We will make sure your issue is resolved.
+              for any complaints. We will make sure your issue gets resolved.
             </div>
           </div>
           <div className="block grid-col-1 content-center gap-4 text-center">
@@ -92,8 +96,8 @@ export default function Home() {
               <span><FontAwesomeIcon icon={faStar} color="violet" /></span>
               <span></span>
             </span>
-            <Link href="https://g.page/r/CVPLL81udas4EBM/review">
-              <div className="text-center text-3xl bg-amber-400 hover:bg-amber-800 font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-amber-600 hover:text-white">Rate us here</div>
+            <Link href="https://g.page/r/CVPLL81udas4EBM/review" target="_blank">
+              <div className="text-center text-3xl bg-amber-400 hover:bg-amber-800 font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-amber-600 hover:text-white  transition duration-500 ease-in-out">Rate us here</div>
             </Link>  
             <div className="font-thin text-center text-2xl sm:text-xl md:text-3xl my-12 block grid-col-1 ">
               “If you hated us, tell us. If you loved us, tell others!“
