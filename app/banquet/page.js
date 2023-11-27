@@ -56,12 +56,12 @@ export default function Banquet() {
             </div>
         </div>
         <div className="inline-block m-auto">
-          <Link href="https://wa.me/919641693184" target="_blank" className='inline-block m-auto'>
+          <Link href="tel:+917501263184" target="_blank" className='inline-block m-auto'>
             <div className="text-center hover:bg-amber-800 font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-2xl shadow-yellow-600 hover:shadow-amber-600 hover:text-white transition duration-200 ease-in-out">
               <div className="flex items-center justify-center">
                 <FontAwesomeIcon icon={faPhone} color="black" width={40} />
                 <div>
-                  <strong>+91-96416-93184</strong>
+                  <strong>Manager Nilanjan: +91-75012-63184</strong>
                 </div>
               </div>
             </div>

@@ -22,7 +22,7 @@ export default function About() {
 
             <p className="text-lime-800 mx-12">So why wait? Book your stay at Landmark at Malda, one of the top hotels in Malda, today and experience the best that West Bengal has to offer!</p>
             
-            <Link href="https://wa.me/919641693184" target="_blank">
+            <Link href="tel:+919641693184" target="_blank">
               <div className="text-center hover:bg-amber-800 font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-2xl shadow-yellow-600 hover:shadow-amber-600 hover:text-white transition duration-200 ease-in-out">
                 <div className="flex items-center justify-center">
                   <FontAwesomeIcon icon={faPhone} color="black" width={40} />
