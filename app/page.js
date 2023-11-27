@@ -18,7 +18,7 @@ export default function Home() {
           className="w-full h-auto"
         />
       </div>
-      <Link href="/banquet" className="animate-bounce bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 m-auto flex py-1 md:py-2 px-4 text-slate-100 hover:from-pink-500 hover:to-yellow-500">
+      <Link href="/banquet" className="animate-bounce bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 m-auto flex py-1 md:py-2 text-white hover:from-pink-500 hover:to-yellow-500">
         <div className='md:text-xl m-auto'>
           <FontAwesomeIcon icon={faCakeCandles} width="20" height="20" className="inline"/>
           <span>✨ BANQUET CUM CONFERENCE HALL ✨</span>
@@ -99,7 +99,7 @@ export default function Home() {
               </div>
               <div className="inline-block">
                 <Link href="https://royaltouch.my.canva.site/" target="_blank">
-                      <div className="transition duration-200 ease-in-out text-center text-xl bg-pink-800 hover:bg-amber-400 hover:text-black text-white font-bold px-4 py-2 my-4 rounded cursor-pointer">Learn more...</div>
+                      <div className="transition duration-200 ease-in-out text-center text-xl bg-pink-800 hover:bg-amber-400 hover:text-black text-white font-bold px-4 py-2 my-4 rounded cursor-pointer dark:bg-pink-400">Learn more...</div>
                 </Link> 
               </div>
             </figcaption>
