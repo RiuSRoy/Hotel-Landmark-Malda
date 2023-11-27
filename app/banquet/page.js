@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {faPhone} from "@fortawesome/free-solid-svg-icons"
+import {faBook, faPhone} from "@fortawesome/free-solid-svg-icons"
 import Image from 'next/image';
 
 export default function Banquet() {
@@ -36,6 +36,11 @@ export default function Banquet() {
               <div className="text-slate-700 dark:text-slate-500">
               📞 +91-75012-63184
               </div>
+              <Link className="text-sky-700 dark:text-sky-500" href="https://www.facebook.com/profile.php?id=100095382827717">
+                <FontAwesomeIcon icon={faBook} width="20" height="20" className='inline'/>
+                <span>Book from our facebook page</span>
+              </Link>
+              
             </figcaption>
           </div>
         </div>

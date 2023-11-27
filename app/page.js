@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from './page.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {faWifi, faSnowflake, faUser, faBowlFood, faLocation, faStar, faPhone, faChampagneGlasses, faCakeCandles, faLocationDot, faMapPin} from "@fortawesome/free-solid-svg-icons"
+import {faWifi, faSnowflake, faUser, faBowlFood, faLocation, faStar, faPhone, faChampagneGlasses, faCakeCandles, faLocationDot, faMapPin, faArrowRight, faArrowRightArrowLeft, faArrowRightLong} from "@fortawesome/free-solid-svg-icons"
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -20,8 +20,9 @@ export default function Home() {
       </div>
       <Link href="/banquet" className="animate-bounce bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 m-auto flex py-1 md:py-2 px-4 text-slate-100 hover:from-pink-500 hover:to-yellow-500">
         <div className='md:text-xl m-auto'>
-          <span>BANQUET</span>
           <FontAwesomeIcon icon={faCakeCandles} width="20" height="20" className="inline"/>
+          <span>✨ BANQUET CUM CONFERENCE HALL ✨</span>
+          <FontAwesomeIcon icon={faArrowRightLong} width="20" height="20" className="inline"/>
         </div>
       </Link>
       <div className="m-auto max-w-[80%] flex flex-col lg:gap-y-8 mt-12">
@@ -59,7 +60,7 @@ export default function Home() {
         </div>
         <div className='m-auto text-center mt-8 md:mt-0 text-pink-500'>
           <FontAwesomeIcon icon={faChampagneGlasses} beatFade width="50" height="50" className="inline-block animate-spin" />
-          <strong>OUR ALL-NEW RESTRO IS HERE!</strong>
+          <strong>  OUR ALL-NEW RESTRO IS HERE !</strong>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-4">
           <div>
@@ -151,11 +152,11 @@ export default function Home() {
           </div>
           <div className="block grid-col-1 content-center gap-4 text-center">
             <span className="grid grid-cols-5 gap-4">
-              <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping" /></span>
+              <span><FontAwesomeIcon icon={faStar} color="violet" className="animate-ping" /></span>
               <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping"  /></span>
+              <span><FontAwesomeIcon icon={faStar} color="violet" className="animate-ping"  /></span>
               <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping"  /></span>
-              <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping"  /></span>
-              <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping"  /></span>
+              <span><FontAwesomeIcon icon={faStar} color="violet" className="animate-ping"  /></span>
               <span></span>
             </span>
             <Link href="https://g.page/r/CVPLL81udas4EBM/review" target="_blank">
