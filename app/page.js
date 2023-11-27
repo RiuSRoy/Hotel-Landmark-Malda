@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from './page.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {faWifi, faSnowflake, faUser, faBowlFood, faLocation, faStar, faPhone, faChampagneGlasses, faCakeCandles} from "@fortawesome/free-solid-svg-icons"
+import {faWifi, faSnowflake, faUser, faBowlFood, faLocation, faStar, faPhone, faChampagneGlasses, faCakeCandles, faLocationDot, faMapPin} from "@fortawesome/free-solid-svg-icons"
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -18,6 +18,12 @@ export default function Home() {
           className="w-full h-auto"
         />
       </div>
+      <Link href="/banquet" className="animate-bounce bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 m-auto flex py-1 md:py-2 px-4 text-slate-100 hover:from-pink-500 hover:to-yellow-500">
+        <div className='md:text-xl m-auto'>
+          <span>BANQUET</span>
+          <FontAwesomeIcon icon={faCakeCandles} width="20" height="20" className="inline"/>
+        </div>
+      </Link>
       <div className="m-auto max-w-[80%] flex flex-col lg:gap-y-8 mt-12">
         <div className="flex flex-col lg:flex-row gap-y-16 justify-center text-center ">
           <div className="flex flex-col gap-y-4 justify-center text-center">
@@ -34,19 +40,25 @@ export default function Home() {
               <div className="mix-blend-multiply bg-yellow-500 rounded-full w-24 h-24"></div>
             </div>
             <div className="block grid-col-1 content-center gap-4 text-center">
-              {/* <Link href = '/book' className="prim-link">Book Your Stay</Link> */}
-              <div className='text-xl'>Call us at <strong>+91-9641693184</strong> or whatsapp here 
+              <div className='text-xl'>Call us at <strong>+91-96416-93184</strong> 
+                <Link href="tel:+919641693184" target="_blank">
+                    <div className=" transition duration-200 ease-in-out text-center text-2xl bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-sky-300">📞 96416-93184</div>
+                </Link> 
+                or whatsapp! 
                 <Link href="https://wa.me/919641693184" target="_blank">
-                    <div className=" transition duration-200 ease-in-out text-center text-2xl bg-lime-700 hover:bg-lime-800 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-lime-600">9641693184</div>
+                    <div className=" transition duration-200 ease-in-out text-center text-2xl bg-lime-700 hover:bg-lime-800 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-lime-600">96416-93184</div>
                 </Link> 
                 for booking purpose or any other queries.
               </div>
             </div>
           </div>
         </div>
-        
-        <div className='m-auto text-center mt-8 md:mt-0'>
-          <FontAwesomeIcon icon={faChampagneGlasses} beatFade width="50" height="50" className="inline-block" />
+        <div className="border-y-black py-1 md:py-2 px-4 text-center md:text-xl text-sm my-4">
+          <FontAwesomeIcon icon={faLocationDot} width="20" height="20" className="inline"/>
+          <span className="">Rabindra Avenue, Above Overseas Bank, near Raj Hotel, Malda</span>
+        </div>
+        <div className='m-auto text-center mt-8 md:mt-0 text-pink-500'>
+          <FontAwesomeIcon icon={faChampagneGlasses} beatFade width="50" height="50" className="inline-block animate-spin" />
           <strong>OUR ALL-NEW RESTRO IS HERE!</strong>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-4">
@@ -68,7 +80,7 @@ export default function Home() {
           <div>
               <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-6.jpg" alt="" width="300" height="300"/>
           </div>
-      </div>
+        </div>
         <div className="md:flex bg-slate-100 rounded-xl p-2 md:p-4 border-black border-2">
           <Image className="w-48 h-48 mx-auto" src="/prim-logo.png" alt="" width="384" height="384"/>
           <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
@@ -78,15 +90,15 @@ export default function Home() {
               </p>
             </blockquote>
             <figcaption className="font-medium">
-              <div className="text-purple-500 dark:text-purple-400">
+              <div className="text-pink-400">
                 Royal Touch
               </div>
-              <div className="text-slate-700 dark:text-slate-500">
+              <div className="text-pink-700">
                 Fine Dine Restaurant
               </div>
               <div className="inline-block">
                 <Link href="https://royaltouch.my.canva.site/" target="_blank">
-                      <div className="transition duration-200 ease-in-out text-center text-xl bg-purple-400 hover:bg-purple-600 text-white font-bold px-4 py-2 my-4 rounded cursor-pointer">Learn more...</div>
+                      <div className="transition duration-200 ease-in-out text-center text-xl bg-pink-800 hover:bg-amber-400 hover:text-black text-white font-bold px-4 py-2 my-4 rounded cursor-pointer">Learn more...</div>
                 </Link> 
               </div>
             </figcaption>
@@ -139,11 +151,11 @@ export default function Home() {
           </div>
           <div className="block grid-col-1 content-center gap-4 text-center">
             <span className="grid grid-cols-5 gap-4">
-              <span><FontAwesomeIcon icon={faStar} color="violet" /></span>
-              <span><FontAwesomeIcon icon={faStar} color="violet" /></span>
-              <span><FontAwesomeIcon icon={faStar} color="violet" /></span>
-              <span><FontAwesomeIcon icon={faStar} color="violet" /></span>
-              <span><FontAwesomeIcon icon={faStar} color="violet" /></span>
+              <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping" /></span>
+              <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping"  /></span>
+              <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping"  /></span>
+              <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping"  /></span>
+              <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping"  /></span>
               <span></span>
             </span>
             <Link href="https://g.page/r/CVPLL81udas4EBM/review" target="_blank">
