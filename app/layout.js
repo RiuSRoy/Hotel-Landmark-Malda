@@ -1,6 +1,7 @@
 import './globals.css'
 import { Itim} from '@next/font/google';
 import Link from 'next/link'
+import { initGA, logPageView } from '../analytics';
 import Footer from './footer';
 
 const font = Itim({ 
@@ -10,6 +11,14 @@ const font = Itim({
 });
 
 export default function RootLayout({ children }) {
+
+    // useEffect(() => {
+    //   if (!window.GA_INITIALIZED) {
+    //     initGA();
+    //     window.GA_INITIALIZED = true;
+    //   }
+    //   logPageView();
+    // }, []);
   return (
     <html lang="en">
       {/*
