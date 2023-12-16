@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { header } from "../page";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 export default function Banquet() {
   return (
@@ -13,8 +15,12 @@ export default function Banquet() {
             ✨Royal Touch✨
           </h1>
           <h1 className="text-2xl font-bold mb-4 text-center">
-            State of the art Banquet and Restro
+            Best Banquet Hall in Malda
           </h1>
+          <div className="border-y-black py-1 md:py-2 px-4 text-center my-4">
+            <FontAwesomeIcon icon={faLocationDot} width="20" height="20" className="inline"/>
+            <span className="">Rabindra Avenue, Above Overseas Bank, near Raj Hotel, Malda</span>
+          </div>
           <div className="bg-gray-200 p-8 text-justify ">
             <p>
               আপনার বিশেষ দিনটি কি আসছে? 🦋 আপনি কি এমন একটি জায়গা খুঁজছেন যেখানে
@@ -30,7 +36,7 @@ export default function Banquet() {
             </p>
             <button
             href="tel:+917501263184"
-            className="bg-purple-500 text-white py-2 px-4 mt-6 rounded"
+            className="bg-purple-500 hover:bg-indigo-500 transition text-white py-2 px-4 mt-6 rounded"
           >
             <Link href="tel:+917501263184">Call Now</Link>
           </button>
@@ -38,12 +44,12 @@ export default function Banquet() {
 
           <section className="p-4">
             <h1 className={`text-4xl font-bold mb-8`}>
-              Experience Unforgettable Celebrations at Our Banquet in Malda ❤
+              Experience Unforgettable Celebrations at the best Banquet in Malda ❤
             </h1>
 
             <Image
               src="/banquet.png"
-              alt="Malda Banquet Header Photo"
+              alt="Affordable banquet in Malda"
               className="w-full h-auto object-cover rounded my-4"
               width={400}
               height={900}
@@ -57,13 +63,19 @@ export default function Banquet() {
                 unforgettable celebrations.
               </p>
 
+              <button
+            className={`shadow-2xl mx-auto ${header.className} hover:border-blue-800 border-b-8 text-black hover:bg-blue-600 bg-emerald-400 hover:text-white border-emerald-500  transition ease-in py-2 px-4 mt-6 rounded block`}
+          >
+            <Link href="/contact">Check our reviews here</Link>
+          </button>
+
               <h2 className="text-2xl mt-8">
                 The Perfect Venue for Every Occasion 🎉
               </h2>
 
               <Image
                 src="/site-photo/banq-3.jpeg"
-                alt="Landmark Banquet Photo 1"
+                alt="Best banquet halls Malda"
                 className="w-full h-auto object-cover rounded my-4"
                 width={400}
                 height={400}
@@ -83,7 +95,7 @@ export default function Banquet() {
               </h2>
               <Image
                 src="/site-photo/banq-2.jpeg"
-                alt="Landmark Banquet Photo 2"
+                alt="Malda banquet catering"
                 className="w-full h-auto object-cover rounded my-4"
                 width={400}
                 height={400}
@@ -102,7 +114,7 @@ export default function Banquet() {
               </h2>
               <Image
                 src="/site-photo/banq-1.jpeg"
-                alt="Landmark Banquet Photo 3"
+                alt="Small banquet hall Malda"
                 className="w-full h-auto object-cover rounded my-4"
                 width={400}
                 height={400}
@@ -113,13 +125,14 @@ export default function Banquet() {
                 culinary team is dedicated to delighting your taste buds with a
                 diverse menu of mouth-watering dishes. Whether you prefer
                 traditional local cuisine or international flavors, we have a
-                menu that can be tailored to your preferences.
+                menu that can be tailored to your preferences. Check our in-house restaurant, the  
+                <Link className='text-indigo-500 font-bold underline-offset-8 underline' href="https://royaltouch.my.canva.site/" target="_blank"> best restaurant in malda</Link>.
               </p>
 
               <h2 className="text-2xl mt-8">Unmatched Hospitality ✅</h2>
               <Image
                 src="/site-photo/banq-4.jpeg"
-                alt="Landmark Banquet Photo 4"
+                alt="Luxury banquet in Malda"
                 className="w-full h-auto object-cover rounded my-4"
                 width={400}
                 height={400}
@@ -136,7 +149,7 @@ export default function Banquet() {
               <h2 className="text-2xl mt-8">Discover the Difference 🔥</h2>
               <Image
                 src="/site-photo/rest-5.jpg"
-                alt="Landmark Banquet Photo 4"
+                alt="Conference halls in Malda"
                 className="w-full h-auto object-cover rounded my-4"
                 width={400}
                 height={400}
@@ -175,7 +188,7 @@ export default function Banquet() {
           </h1>
           <button
             href="tel:+917501263184"
-            className="bg-purple-500 text-white py-2 px-4 mt-6 rounded"
+            className="bg-purple-500 hover:bg-indigo-500 transition text-white py-2 px-4 mt-6 rounded"
           >
             <Link href="tel:+917501263184">Call Now</Link>
           </button>

@@ -1,3 +1,10 @@
+## seo hacks
+* all alt tags should have keywords in them
+* url of all pages -> <keyword>-<city>-<state abbr>
+* Two internal links and one external to Google business profile
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

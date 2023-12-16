@@ -23,7 +23,7 @@ export default function Home() {
           className="w-full h-auto"
         />
       </div> */}
-      <Link href="/banquet+malda+wb" className="animate-bounce bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 m-auto flex py-1 md:py-2 text-white hover:from-pink-500 hover:to-yellow-500">
+      <Link href="/banquet-malda-wb" className="animate-bounce bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 m-auto flex py-1 md:py-2 text-white hover:from-pink-500 hover:to-yellow-500">
         <div className='md:text-xl m-auto'>
           <FontAwesomeIcon icon={faCakeCandles} width="20" height="20" className="inline"/>
           <span>✨ BANQUET CUM CONFERENCE HALL ✨</span>
@@ -65,30 +65,30 @@ export default function Home() {
         </div>
         <div className='m-auto text-center mt-8 md:mt-0 text-pink-500'>
           <FontAwesomeIcon icon={faChampagneGlasses} beatFade width="50" height="50" className="inline-block animate-spin" />
-          <strong>  OUR ALL-NEW RESTRO IS HERE !</strong>
+          <strong> OUR ALL-NEW RESTRO IS HERE!</strong>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-4">
           <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-1.jpg" alt="" width="300" height="450"/>
+              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-1.jpg" alt="Malda banquet booking" width="300" height="450"/>
           </div>
           <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-2.jpg" alt="" width="300" height="300"/>
+              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-2.jpg" alt="banquet in malda" width="300" height="300"/>
           </div>
           <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-3.jpg" alt="" width="300" height="300"/>
+              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-3.jpg" alt="Banquet services Malda" width="300" height="300"/>
           </div>
           <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-4.jpg" alt="" width="300" height="300"/>
+              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-4.jpg" alt="Party hall in Malda" width="300" height="300"/>
           </div>
           <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-5.jpg" alt="" width="300" height="300"/>
+              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-5.jpg" alt="Malda event venue" width="300" height="300"/>
           </div>
           <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-6.jpg" alt="" width="300" height="300"/>
+              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-6.jpg" alt="Corporate event venue Malda" width="300" height="300"/>
           </div>
         </div>
         <div className="md:flex bg-slate-100 rounded-xl p-2 md:p-4 border-black border-2">
-          <Image className="w-48 h-48 mx-auto" src="/prim-logo.png" alt="" width="384" height="384"/>
+          <Image className="w-48 h-48 mx-auto" src="/prim-logo.png" alt="Banquet for birthday party in Malda" width="384" height="384"/>
           <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
             <blockquote>
               <p className="text-lg font-medium">
