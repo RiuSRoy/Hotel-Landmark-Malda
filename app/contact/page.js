@@ -14,21 +14,22 @@ const Contact = () => {
           <div>
             <h2 className="text-2xl font-semibold mb-4">Hotel Contact</h2>
             <p>Email: <Link href="mailto:landmark2286@gmail.com">landmark2286@gmail.com</Link></p>
-            <p>(Reception) Phone: 
+            <p>(Reception) Phone: </p>
                 <ul className="list-disc pl-8">
                     <li><Link href="tel:+917501263184">+91-75012 63184</Link></li>
                     <li>+(03512) 221560</li>
                     <li>+(03512) 221184</li>
                 </ul>
-            </p>
             <p>Address: Rabindra Avenue, Above Overseas Bank, Near Raj Hotel, Malda, West Bengal, 732101, India</p>
             <button
             className="bg-gradient-to-br from-red-500 via-yellow-300 to-green-500 text-black py-2 px-4 mt-6 rounded "
           >
             <Link href="https://www.google.com/search?q=Hotel+Landmark+Malda&stick=H4sIAAAAAAAA_-NgU1I1qDC2TEtMSzFIMbBISk0ysEizAgpZJCaZm5qlJqcYpSUnmRovYhXxyC9JzVHwScxLyU0sylbwTcxJSQQAcoGI0UAAAAA&hl=en&mat=CZCCwmLOEYETElcBl7_Ll0EajnY54NBodbnY9sB-lWKSrZvBhd9FmVP-fSa-m4fVRCAQ-JoefqG17xdXJwnjuTZR-AyAf40R-Ja_o7WqGKrNHhO9ArcuNep8lW7HWgYvN9c&authuser=0" target='_blank'>Google Business Profile</Link>
             </button>
-            <button className="bg-gradient-to-t from-zinc-400 to-zinc-800 text-white py-2 px-4 mt-6 rounded ">
-                <Link href="https://www.google.com/maps/place/Hotel+Landmark+Malda/@25.0005976,88.1417702,17z/data=!3m1!4b1!4m10!3m9!1s0x39fafd0d08beb08f:0x38ab756ecd2fcb53!5m3!1s2023-03-10!4m1!1i2!8m2!3d25.0005976!4d88.1417702!16s%2Fg%2F11nnvd67rb"></Link>Locate us on map
+            <button
+            className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-2 px-4 mt-6 rounded "
+          >
+            <Link href="https://www.google.com/maps/place/Hotel+Landmark+Malda/@25.0005976,88.1417702,17z/data=!3m1!4b1!4m10!3m9!1s0x39fafd0d08beb08f:0x38ab756ecd2fcb53!5m3!1s2023-03-10!4m1!1i2!8m2!3d25.0005976!4d88.1417702!16s%2Fg%2F11nnvd67rb" target='_blank'>Locate us on map</Link>
             </button>
           </div>
 

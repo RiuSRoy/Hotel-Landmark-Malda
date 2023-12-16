@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faPhone } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { header } from "../page";
 
@@ -8,12 +6,11 @@ export default function Banquet() {
   return (
     <>
       <div className="min-h-screen flex items-center justify-center">
-        <div className="max-w-2xl p-8 bg-white rounded-lg shadow-lg">
+        <div className="max-w-2xl p-4 bg-white rounded-lg shadow-lg">
           <h1
             className={`text-3xl md:text-5xl font-bold text-center mt-12 ${header.className}`}
           >
-            {" "}
-            ✨ Royal Touch ✨
+            ✨Royal Touch✨
           </h1>
           <h1 className="text-2xl font-bold mb-4 text-center">
             State of the art Banquet and Restro
@@ -32,10 +29,10 @@ export default function Banquet() {
               স্বপ্নের অনুষ্ঠান বাস্তবায়নে আপনাকে সাহায্য করবে।
             </p>
             <button
-            href="tel:+917501275012"
+            href="tel:+917501263184"
             className="bg-purple-500 text-white py-2 px-4 mt-6 rounded"
           >
-            <Link href="tel:+917501275012">Call Now</Link>
+            <Link href="tel:+917501263184">Call Now</Link>
           </button>
           </div>
 
@@ -177,10 +174,10 @@ export default function Banquet() {
             Reserve your banquet now!
           </h1>
           <button
-            href="tel:+917501275012"
+            href="tel:+917501263184"
             className="bg-purple-500 text-white py-2 px-4 mt-6 rounded"
           >
-            <Link href="tel:+917501275012">Call Now</Link>
+            <Link href="tel:+917501263184">Call Now</Link>
           </button>
 </div>
 
