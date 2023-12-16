@@ -9,7 +9,7 @@ export default function Footer() {
             <Image src="/logo.png" width={200} height={200} alt="One of the top hotels in malda" />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 mt-12">
-            <Link href="/about" className="hover:text-amber-500 transition duration-200 hover:scale-105">→ About us</Link>
+            <Link href="/hotel+malda+wb" className="hover:text-amber-500 transition duration-200 hover:scale-105">→ About us</Link>
             <Link href="https://www.google.com/maps/place/Hotel+Landmark+Malda/@25.0005976,88.1417702,17z/data=!3m1!4b1!4m10!3m9!1s0x39fafd0d08beb08f:0x38ab756ecd2fcb53!5m3!1s2023-03-10!4m1!1i2!8m2!3d25.0005976!4d88.1417702!16s%2Fg%2F11nnvd67rb" className='hover:text-amber-500 transition duration-200 hover:scale-105' target="_blank">→ Directions</Link>
             <Link href="https://g.page/r/CVPLL81udas4EBM/review" className='hover:text-amber-500 transition duration-200 hover:scale-105' target="_blank">→ Review us</Link>
             <div>

@@ -1,14 +1,19 @@
 import Head from 'next/head'
-import styles from './page.module.css'
+import { Cinzel_Decorative} from '@next/font/google';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faWifi, faSnowflake, faUser, faBowlFood, faLocation, faStar, faPhone, faChampagneGlasses, faCakeCandles, faLocationDot, faMapPin, faArrowRight, faArrowRightArrowLeft, faArrowRightLong} from "@fortawesome/free-solid-svg-icons"
 import Link from 'next/link'
 import Image from 'next/image'
 
+export const header = Cinzel_Decorative({ 
+  subsets: ['latin'],
+  weight: ['700', '700'],
+});
 export default function Home() {
   return (
-    <main className="m-auto w-full h-full">
-      <div className="relative">
+    <main className="w-full h-full my-3">
+      
+      {/* <div className="relative">
         <Image
           src="/cover2.png"
           alt="Hotel Landmark Malda"
@@ -17,8 +22,8 @@ export default function Home() {
           sizes="100vw"
           className="w-full h-auto"
         />
-      </div>
-      <Link href="/banquet" className="animate-bounce bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 m-auto flex py-1 md:py-2 text-white hover:from-pink-500 hover:to-yellow-500">
+      </div> */}
+      <Link href="/banquet+malda+wb" className="animate-bounce bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 m-auto flex py-1 md:py-2 text-white hover:from-pink-500 hover:to-yellow-500">
         <div className='md:text-xl m-auto'>
           <FontAwesomeIcon icon={faCakeCandles} width="20" height="20" className="inline"/>
           <span>✨ BANQUET CUM CONFERENCE HALL ✨</span>
@@ -28,7 +33,7 @@ export default function Home() {
       <div className="m-auto max-w-[80%] flex flex-col lg:gap-y-8 mt-12">
         <div className="flex flex-col lg:flex-row gap-y-16 justify-center text-center ">
           <div className="flex flex-col gap-y-4 justify-center text-center">
-            <div className="text-5xl sm:text-6xl md:text-8xl lg:text-7xl flex flex-col text-center trans">
+            <div className={`text-5xl sm:text-6xl md:text-8xl lg:text-7xl flex flex-col text-center trans ${header.className}`}>
               <h1>Welcome to</h1>
               <h1>Hotel Landmark,</h1>
               <h1>Malda</h1>
