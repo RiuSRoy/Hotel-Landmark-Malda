@@ -3,6 +3,7 @@ import Image from "next/image";
 import { header } from "../page";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { googleBusinessProfile } from "../layout";
 
 export default function Banquet() {
   return (
@@ -18,14 +19,21 @@ export default function Banquet() {
             Best Banquet Hall in Malda
           </h1>
           <div className="border-y-black py-1 md:py-2 px-4 text-center my-4">
-            <FontAwesomeIcon icon={faLocationDot} width="20" height="20" className="inline"/>
-            <span className="">Rabindra Avenue, Above Overseas Bank, near Raj Hotel, Malda</span>
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              width="20"
+              height="20"
+              className="inline"
+            />
+            <span className="">
+              Rabindra Avenue, Above Overseas Bank, near Raj Hotel, Malda
+            </span>
           </div>
           <div className="bg-gray-200 p-8 text-justify ">
             <p>
-              আপনার বিশেষ দিনটি কি আসছে? 🦋 আপনি কি এমন একটি জায়গা খুঁজছেন যেখানে
-              আপনার অতিথিরা একটি অবিস্মরণীয় অভিজ্ঞতা লাভ করতে পারে? রয়্যাল টাচ
-              হল আপনার জন্য নিখুঁত স্থান।
+              আপনার বিশেষ দিনটি কি আসছে? 🦋 আপনি কি এমন একটি জায়গা খুঁজছেন
+              যেখানে আপনার অতিথিরা একটি অবিস্মরণীয় অভিজ্ঞতা লাভ করতে পারে?
+              রয়্যাল টাচ হল আপনার জন্য নিখুঁত স্থান।
             </p>
 
             <p className="my-4">
@@ -35,16 +43,17 @@ export default function Banquet() {
               স্বপ্নের অনুষ্ঠান বাস্তবায়নে আপনাকে সাহায্য করবে।
             </p>
             <button
-            href="tel:+917501263184"
-            className="bg-purple-500 hover:bg-indigo-500 transition text-white py-2 px-4 mt-6 rounded"
-          >
-            <Link href="tel:+917501263184">Call Now</Link>
-          </button>
+              href="tel:+917501263184"
+              className="hover:shadow-black hover:shadow-lg bg-purple-500 hover:bg-indigo-500 transition text-white py-2 px-4 mt-6 rounded"
+            >
+              <Link href="tel:+917501263184">Call Now</Link>
+            </button>
           </div>
 
           <section className="p-4">
             <h1 className={`text-4xl font-bold mb-8`}>
-              Experience Unforgettable Celebrations at the best Banquet in Malda ❤
+              Experience Unforgettable Celebrations at the best Banquet in Malda
+              ❤
             </h1>
 
             <Image
@@ -64,10 +73,10 @@ export default function Banquet() {
               </p>
 
               <button
-            className={`shadow-2xl mx-auto ${header.className} hover:border-blue-800 border-b-8 text-black hover:bg-blue-600 bg-emerald-400 hover:text-white border-emerald-500  transition ease-in py-2 px-4 mt-6 rounded block`}
-          >
-            <Link href="/contact">Check our reviews here</Link>
-          </button>
+                className={`mx-auto ${header.className} hover:border-blue-800 border-b-8 text-black hover:bg-blue-600 bg-emerald-400 hover:text-white border-emerald-500  transition ease-in py-2 px-4 mt-6 rounded block`}
+              >
+                <Link href={googleBusinessProfile}>Check our reviews here</Link>
+              </button>
 
               <h2 className="text-2xl mt-8">
                 The Perfect Venue for Every Occasion 🎉
@@ -125,8 +134,17 @@ export default function Banquet() {
                 culinary team is dedicated to delighting your taste buds with a
                 diverse menu of mouth-watering dishes. Whether you prefer
                 traditional local cuisine or international flavors, we have a
-                menu that can be tailored to your preferences. Check our in-house restaurant, the  
-                <Link className='text-indigo-500 font-bold underline-offset-8 underline' href="https://royaltouch.my.canva.site/" target="_blank"> best restaurant in malda</Link>.
+                menu that can be tailored to your preferences. Check our
+                in-house restaurant, the
+                <Link
+                  className="text-indigo-500 font-bold underline-offset-8 underline"
+                  href="https://royaltouch.my.canva.site/"
+                  target="_blank"
+                >
+                  {" "}
+                  best restaurant in malda
+                </Link>
+                .
               </p>
 
               <h2 className="text-2xl mt-8">Unmatched Hospitality ✅</h2>
@@ -165,34 +183,33 @@ export default function Banquet() {
             </article>
           </section>
 
-<div className="bg-gray-100 p-4">
+          <div className="bg-gray-100 p-4">
+            <h2 className="my-4 text-center text-xl">
+              The Ultimate Banquet Experience ✨
+            </h2>
+            <ul className="">
+              <li>Hosting Up to 200 Guests</li>
+              <li>🍽️ Exquisite Cuisine</li>
+              <li>🕯️ Elegant Ambiance </li>
+              <li>🙌 Exceptional Service </li>
+            </ul>
 
-          <h2 className="my-4 text-center text-xl">
-            The Ultimate Banquet Experience ✨
-          </h2>
-          <ul className="">
-            <li>Hosting Up to 200 Guests</li>
-            <li>🍽️ Exquisite Cuisine</li>
-            <li>🕯️ Elegant Ambiance </li>
-            <li>🙌 Exceptional Service </li>
-          </ul>
-
-          <p className="my-4">
-            Indulge in an unforgettable banquet experience at Royal Touch.
-            Whether it is a wedding, corporate event, or a special celebration,
-            we have got you covered. Book Your Event Today! Make your special
-            moments truly special at Royal Touch.
-          </p>
-          <h1 className="text-xl my-4 text-center">
-            Reserve your banquet now!
-          </h1>
-          <button
-            href="tel:+917501263184"
-            className="bg-purple-500 hover:bg-indigo-500 transition text-white py-2 px-4 mt-6 rounded"
-          >
-            <Link href="tel:+917501263184">Call Now</Link>
-          </button>
-</div>
+            <p className="my-4">
+              Indulge in an unforgettable banquet experience at Royal Touch.
+              Whether it is a wedding, corporate event, or a special
+              celebration, we have got you covered. Book Your Event Today! Make
+              your special moments truly special at Royal Touch.
+            </p>
+            <h1 className="text-xl my-4 text-center">
+              Reserve your banquet now!
+            </h1>
+            <button
+              href="tel:+917501263184"
+              className="hover:shadow-black hover:shadow-lg bg-purple-500 hover:bg-indigo-500 transition text-white py-2 px-4 mt-6 rounded"
+            >
+              <Link href="tel:+917501263184">Call Now</Link>
+            </button>
+          </div>
 
           <p className="mt-4">
             আজই রয়্যাল টাচের সাথে যোগাযোগ করুন এবং আপনার বিশেষ অনুষ্ঠানের জন্য
