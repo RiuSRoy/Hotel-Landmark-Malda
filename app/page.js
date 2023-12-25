@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { Cinzel_Decorative} from '@next/font/google';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faWifi, faSnowflake, faUser, faBowlFood, faLocation, faStar, faPhone, faChampagneGlasses, faCakeCandles, faLocationDot, faMapPin, faArrowRight, faArrowRightArrowLeft, faArrowRightLong} from "@fortawesome/free-solid-svg-icons"

@@ -4,7 +4,7 @@ import { googleBusinessProfile } from "./layout";
 
 export default function Footer() {
   return (
-    <div className="font-thin text-justify p-14 bg-yellow-900 text-stone-300 mt-14">
+    <div className="shadow-inner shadow-yellow-300 font-thin text-justify p-14 bg-yellow-900 text-stone-300 mt-14">
       <br />
       <div className="flex items-center justify-center">
         <Image
@@ -19,7 +19,7 @@ export default function Footer() {
           href="/hotel-malda-wb"
           className="hover:text-amber-500 transition duration-200 hover:scale-105"
         >
-          → Browse Roomss
+          → Browse Rooms
         </Link>
         <Link href={googleBusinessProfile} target="_blank">
           → Directions

@@ -83,7 +83,7 @@ export default function Banquet() {
               </h2>
 
               <Image
-                src="/site-photo/banq-3.jpeg"
+                src="/site-photo/banq-3.jpg"
                 alt="Best banquet halls Malda"
                 className="w-full h-auto object-cover rounded my-4"
                 width={400}
@@ -103,7 +103,7 @@ export default function Banquet() {
                 Exceptional Facilities and Amenities
               </h2>
               <Image
-                src="/site-photo/banq-2.jpeg"
+                src="/site-photo/banq-2.jpg"
                 alt="Malda banquet catering"
                 className="w-full h-auto object-cover rounded my-4"
                 width={400}
@@ -122,7 +122,7 @@ export default function Banquet() {
                 Culinary Delights to Satisfy Every Palate
               </h2>
               <Image
-                src="/site-photo/banq-1.jpeg"
+                src="/site-photo/banq-1.jpg"
                 alt="Small banquet hall Malda"
                 className="w-full h-auto object-cover rounded my-4"
                 width={400}
@@ -149,7 +149,7 @@ export default function Banquet() {
 
               <h2 className="text-2xl mt-8">Unmatched Hospitality ✅</h2>
               <Image
-                src="/site-photo/banq-4.jpeg"
+                src="/site-photo/banq-4.jpg"
                 alt="Luxury banquet in Malda"
                 className="w-full h-auto object-cover rounded my-4"
                 width={400}
