@@ -5,6 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { googleBusinessProfile } from "../layout";
 
+
+export const metadata = {
+  title: "Royal Touch Banquet - Hosting Memorable Events in Malda"
+}
+
 export default function Banquet() {
   return (
     <>

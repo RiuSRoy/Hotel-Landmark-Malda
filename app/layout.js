@@ -9,6 +9,15 @@ const font = Kurale({
   weight: ['400', '400'],
 });
 
+
+const metadata = {
+  title: {
+    default: `Hotel Landmark Malda: Hospitality at its best | Book Your Perfect Stay`,
+    template: `%s | Enquire Now`
+  },
+  description: 'Elegant banquet hall services for hosting parties, corporate events, and special occasions. Book our spacious venue with our professional catering services. Host your event with style and sophistication."'
+}
+
 export default function RootLayout({ children }) {
 
   return (
