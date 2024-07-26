@@ -9,21 +9,14 @@ export default async function handler(req, res) {
         //     errorCode: "er_s5",
         //     "errorMessage": "UNEXPECTED_ERROR!",
         // })
-        
+        console.log(x);
         const r = Math.random();
         if (r < 1) {
     
             const d = {
                 status: "success",
-                data: {
-                    updatedUserBalance: 1000,
-                    "txns": x.txns.map(txn => {
-                        return {
-                            referenceId: txn.referenceId,
-                            merchantTransactionId: txn.referenceId + '_' + randomIntFromInterval(0, 1000)
-                        }
-                    })
-                }
+                updatedUserBalance: 1000,
+                "merchantRefId": x.orderRefId + '_' + randomIntFromInterval(0, 1000),
             }
             res.status(200).json(d);
         } else {
