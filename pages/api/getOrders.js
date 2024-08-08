@@ -4,23 +4,22 @@ import { randomIntFromInterval } from "./createTransactions";
 
 export default function handler(req, res) {
     const x = req.body;
-    console.log(x);
-    const transactions = x.referenceIds.map(txn => {
+    // console.log(x);
+    const orders = x.orderRefIds.map(orderRefId => {
         return {
-            referenceId: txn,
-            transactionId: txn + '_' + randomIntFromInterval(1, 1000),
-            status: 'completed',
+            orderRefId: orderRefId,
+            merchantRefId: orderRefId + '_' + randomIntFromInterval(1, 1000),
+            status: 'success',
+            message: 'Yo! done!'
         }
     })
     const r = Math.random();
-    if (r < 1) {
+    if (r < 6) {
         res.status(200).json({
             status: "success",
-            data: {
-                transactions,
-            }
+            orders,
         })
-    } else if (r > 0.95) {
+    } else if (r > 8) {
         res.status(200).json({
             status: "error",
             errorCode: "er_s5",

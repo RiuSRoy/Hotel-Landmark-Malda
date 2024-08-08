@@ -9,9 +9,9 @@ export default async function handler(req, res) {
         //     errorCode: "er_s5",
         //     "errorMessage": "UNEXPECTED_ERROR!",
         // })
-        console.log(x);
+        // console.log(x);
         const r = Math.random();
-        if (r < 1) {
+        if (r < 6) {
     
             const d = {
                 status: "success",
@@ -19,13 +19,20 @@ export default async function handler(req, res) {
                 "merchantRefId": x.orderRefId + '_' + randomIntFromInterval(0, 1000),
             }
             res.status(200).json(d);
-        } else {
+        }
+        else if (r > 8) {
             res.status(200).json({ 
                 status: "error",
                 errorCode: "er_w1",
                 "errorMessage": "User Wallet is not active!",
             })
-        } 
+        }  else {
+            res.status(200).json({ 
+                status: "error",
+                errorCode: "er_s5",
+                "errorMessage": "Unknown error!",
+            });
+        }
     } catch (e) {
             res.status(200).json({ 
                 status: "error",
