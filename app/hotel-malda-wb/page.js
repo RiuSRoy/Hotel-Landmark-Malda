@@ -12,7 +12,7 @@ export default function About() {
         Hotel Landmark Malda
       </h1>
       <h1 className="text-center pb-12 text-3xl">
-        One of the best hotels in Malda
+        The best business hotel in Malda
       </h1>
       <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-12 text-xl text-justify">
         <p className="text-lime-800 mx-12">
@@ -24,7 +24,8 @@ export default function About() {
         </p>
 
         <Image
-          src="/10-dr.jpeg"
+          src="/rooms/Reception.jpg"
+          className="w-full h-96 object-cover rounded my-4"
           width={500}
           height={500}
           alt="Banquet halls for parties in Malda"
@@ -52,24 +53,49 @@ export default function About() {
         </p>
 
         <Image
-          src="/1.jpeg"
+          src="/10-dr.jpeg"
+          className="w-full h-96 object-cover rounded my-4"
           width={500}
           height={500}
-          alt="Banquet halls with catering in Malda"
+          alt="Banquet halls for parties in Malda"
         />
 
         <p className="text-amber-800 mx-12">
           As one of the leading hotels in Malda, we offer a range of exceptional
-          services and amenities to make your stay even more memorable. Whether
-          you are looking for a delicious meal, or healthy homely food, we will
-          make everything you need right here on-site.{" "}
+          services and amenities to make your stay even more memorable. Our chic fine dine restaurant will give you the perfect ambience with great interiors, awesome music and delicious food to lighten your mood after a tiring day.
         </p>
+
+
+        <Image
+          src="/rooms/deluxe.jpeg"
+          className="w-full h-96 object-cover rounded my-4"
+          width={500}
+          height={500}
+          alt="Deluxe room in Hotel Landmark Malda"
+        />
+        <Image
+          src="/rooms/suite-1.jpg"
+          className="w-full h-96 object-cover rounded my-4"
+          width={500}
+          height={500}
+          alt="Luxury Suite room in Hotel Landmark Malda"
+        />
+
+        <Image
+          src="/rooms/in-house-restro.jpg"
+          // className="w-full h-96 object-cover rounded my-4"
+          width={500}
+          height={500}
+          alt="In house restaurant of Hotel Landmark Malsa"
+        />
 
         <p className="text-lime-800 mx-12">
           So why wait? Book your stay at Landmark at Malda, one of the top
           hotels in Malda, today and experience the best that West Bengal has to
           offer!
         </p>
+
+       
 
         <Link href="tel:+919641693184" target="_blank">
           <div className="text-center hover:bg-amber-800 font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-2xl shadow-yellow-600 hover:shadow-amber-600 hover:text-white transition duration-200 ease-in-out">

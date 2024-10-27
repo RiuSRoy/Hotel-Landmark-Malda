@@ -56,7 +56,6 @@ const Contact = () => {
             <p>Phone: </p>
             <ul className="list-disc pl-8">
               <li>+91-94758 75227 (Banquet Manager)</li>
-              <li>+91-94351 17480 (Banquet Owner)</li>
               <li>
                 <Link href="tel:+919641693184">
                   +91-96416 93184 (Restaurant)

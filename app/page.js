@@ -40,33 +40,45 @@ export default function Home() {
             <p className="font-thin text-center text-2xl sm:text-xl md:text-3xl my-8 italic">
               Feel the difference
             </p>
-            <div className="flex justify-center -space-x-14">
-              <div className="mix-blend-multiply bg-amber-300 rounded-full w-24 h-24"></div>
-              <div className="mix-blend-multiply bg-yellow-500 rounded-full w-24 h-24"></div>
+            <div className="flex justify-center">
+              <Image className="max-w-full h-full rounded-lg object-cover " src="/HL.png" alt="hotel landmark logo" width="300" height="300"/>
             </div>
             <div className="block grid-col-1 content-center gap-4 text-center">
               <div className='text-xl'>Call us at <strong>+91-96416-93184</strong> 
                 <Link href="tel:+919641693184" target="_blank">
-                    <div className=" transition duration-200 ease-in-out text-center text-2xl bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-sky-300">📞 96416-93184</div>
+                    <div className=" transition duration-200 ease-in-out text-center text-2xl bg-pink-400 hover:bg-pink-500 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-pink-300">📞 96416-93184</div>
                 </Link> 
                 or whatsapp! 
                 <Link href="https://wa.me/919641693184" target="_blank">
-                    <div className=" transition duration-200 ease-in-out text-center text-2xl bg-lime-700 hover:bg-lime-800 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-lime-600">96416-93184</div>
+                    <div className=" transition duration-200 ease-in-out text-center text-2xl bg-pink-400 hover:bg-pink-500 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-pink-300">96416-93184</div>
                 </Link> 
                 for booking purpose or any other queries.
               </div>
             </div>
           </div>
         </div>
+        <div className="border-y-black py-1 md:py-2 text-center md:text-xl text-sm mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Image className="max-w-full h-full rounded-lg object-cover shadow-2xl" src="/rooms/exterior.jpg" alt="hotel landmark exterior" width="480" height="640"/>
+          <Image className="max-w-full h-full rounded-lg object-cover shadow-2xl" src="/rooms/entrance.jpeg" alt="hotel landmark entrace" width="480" height="640"/>
+        </div>
         <div className="border-y-black py-1 md:py-2 px-4 text-center md:text-xl text-sm my-4">
           <FontAwesomeIcon icon={faLocationDot} width="20" height="20" className="inline"/>
           <span className="">Rabindra Avenue, Above Overseas Bank, near Raj Hotel, Malda</span>
+        </div>
+        <div className="inline-block">
+          <p className="flex justify-center">&apos;&apos;We are proud to say that having a retention rate of greater than 70%, we are a favourite amongst the business travellers! So book your next stay with us to never search for another hotel in Malda&apos;&apos;</p>
+          <Link
+            href="/hotel-malda-wb"
+            className="hover:text-amber-500 transition duration-200 hover:scale-105 w-48"
+          >
+            <div className="w-72 m-auto transition duration-200 ease-in-out shadow-md hover:shadow-xl text-center text-xl bg-pink-800 hover:bg-amber-400 hover:text-black text-white font-bold px-4 py-2 my-4 rounded cursor-pointer dark:bg-pink-400">Check our Rooms...</div>
+          </Link> 
         </div>
         <div className='m-auto text-center mt-8 md:mt-0 text-pink-500'>
           <FontAwesomeIcon icon={faChampagneGlasses} beatFade width="50" height="50" className="inline-block animate-spin" />
           <strong> OUR ALL-NEW RESTRO IS HERE!</strong>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-4">
+        {/* <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-4">
           <div>
               <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-1.jpg" alt="Malda banquet booking" width="300" height="450"/>
           </div>
@@ -85,7 +97,7 @@ export default function Home() {
           <div>
               <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-6.jpg" alt="Corporate event venue Malda" width="300" height="300"/>
           </div>
-        </div>
+        </div> */}
         <div className="md:flex bg-slate-100 rounded-xl p-2 md:p-4 border-black border-2">
           <Image className="w-48 h-48 mx-auto" src="/prim-logo.png" alt="Banquet for birthday party in Malda" width="384" height="384"/>
           <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
@@ -163,7 +175,7 @@ export default function Home() {
               <span><FontAwesomeIcon icon={faStar} color="violet" className="animate-ping"  /></span>
               <span></span>
             </span>
-            <Link href="https://g.page/r/CVPLL81udas4EBM/review" target="_blank">
+            <Link href="https://g.page/r/CY7o7t2FEsdPEBM/review" target="_blank">
               <div className="text-center text-3xl bg-amber-400 hover:bg-amber-800 font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-amber-600 hover:text-white  transition duration-500 ease-in-out">Rate us here</div>
             </Link>  
             <div className="font-thin text-center text-2xl sm:text-xl md:text-3xl my-12 block grid-col-1 ">
