@@ -1,127 +1,295 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faUsers, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
-import { header } from "../page";
 import { googleBusinessProfile } from "../layout";
 
-export default function About() {
+export const metadata = {
+  title: "Luxury Rooms in Malda | Hotel Landmark",
+  description: "Experience comfort and elegance in our premium rooms. Choose from Economy, Deluxe, and Suite accommodations at Hotel Landmark Malda."
+}
+
+export default function Rooms() {
+  const rooms = [
+    {
+      id: "economy",
+      name: "Economy Room",
+      description: "Perfect for budget-conscious travelers seeking comfort and convenience. Our economy rooms offer all essential amenities for a pleasant stay.",
+      image: "/rooms/economy.jpg",
+      amenities: ["Free WiFi", "Air Conditioning", "TV", "Room Service", "Complimentary Breakfast"],
+      capacity: "1 Guest"
+    },
+    {
+      id: "deluxe",
+      name: "Deluxe Room",
+      description: "Experience premium comfort with our deluxe rooms featuring elegant furnishings, modern amenities, and spacious layouts.",
+      image: "/rooms/deluxe.jpeg",
+      amenities: ["Free WiFi", "Air Conditioning", "Premium TV", "Room Service", "Complimentary Breakfast" ],
+      capacity: "2 Guests"
+    },
+    {
+      id: "suite",
+      name: "Luxury Suite",
+      description: "Indulge in ultimate luxury with our spacious suites offering separate living areas, premium furnishings, and exceptional comfort.",
+      image: "/rooms/suite-1.jpg",
+      amenities: ["Free WiFi", "Air Conditioning", "Premium TV", "Room Service", "Living Area with sofa", "Complimentary Breakfast"],
+      capacity: "2-3 Guests"
+    }
+  ];
+
   return (
     <>
-      <h1 className={`text-center pt-24 text-6xl ${header.className}`}>
-        Hotel Landmark Malda
-      </h1>
-      <h1 className="text-center pb-12 text-3xl">
-        The best business hotel in Malda
-      </h1>
-      <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-12 text-xl text-justify">
-        <p className="text-lime-800 mx-12">
-          Welcome to Hotel Landmark, the most affordable destination for
-          travellers in Malda, West Bengal. Our hotel is nestled in the heart of
-          Malda amidst the hustling city life. Whether you are here for business
-          or leisure, our luxurious accommodations and exceptional amenities
-          will ensure that your stay is unforgettable.
-        </p>
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/rooms/Reception.jpg"
+            alt="Hotel Landmark Rooms"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-luxury-navy/70"></div>
+        </div>
+        
+        <div className="relative z-10 text-center text-white luxury-container">
+          <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
+            Luxury Accommodations
+          </h1>
+          <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto">
+            Experience the finest hospitality in Malda
+          </p>
+        </div>
+      </section>
 
-        <Image
-          src="/rooms/Reception.jpg"
-          className="w-full h-96 object-cover rounded my-4"
-          width={500}
-          height={500}
-          alt="Banquet halls for parties in Malda"
-        />
+      {/* Introduction */}
+      <section className="luxury-section bg-white">
+        <div className="luxury-container">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="luxury-subheading mb-6">
+              The Best Business Hotel in Malda
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              Welcome to Hotel Landmark, the most sought-after destination for travelers in Malda, West Bengal. 
+              Our hotel is nestled in the heart of Malda amidst the bustling city life. Whether you are here for 
+              business or leisure, our luxurious accommodations and exceptional amenities will ensure that your 
+              stay is unforgettable.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              At Hotel Landmark, we believe that every detail matters. That is why we have created a warm and 
+              inviting atmosphere, complete with beautiful furnishings, plush linens, and all the modern 
+              conveniences you need to feel at home.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <p className="text-amber-800 mx-12">
-          At Landmark at Malda, we believe that every detail matters. That is
-          why we have created a warm and inviting atmosphere, complete with
-          beautiful furnishings, plush linens, and all the modern conveniences
-          you need to feel at home.
-        </p>
+      {/* Room Types */}
+      <section className="luxury-section bg-luxury-cream">
+        <div className="luxury-container">
+          <div className="text-center mb-12">
+            <h2 className="luxury-heading">
+              Choose Your Perfect Room
+            </h2>
+            <p className="text-xl text-gray-600">
+              Each room is designed with your comfort in mind
+            </p>
+          </div>
 
-        <p className="text-lime-800 mx-12">
-          We are located just minutes from the main market attraction of Malda.
-          Our housekeeping staff family are specially trained to meet every need
-          of yours at any hour of the day. All our guests keep raving about the
-          amazingly awesome behaviour of all our staff making it the
-          <Link
-            className="text-indigo-500 font-bold underline-offset-8 underline"
-            href={googleBusinessProfile}
-          >
-            {" "}
-            best hotel in malda
-          </Link>
-        </p>
+          <div className="space-y-16">
+            {rooms.map((room, index) => (
+              <div 
+                key={room.id} 
+                className={`grid md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+              >
+                <div className={`luxury-card overflow-hidden ${index % 2 === 1 ? 'md:order-2' : ''}`}>
+                  <div className="relative h-[400px]">
+                    <Image
+                      src={room.image}
+                      alt={`${room.name} at Hotel Landmark Malda`}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+                
+                <div className={index % 2 === 1 ? 'md:order-1' : ''}>
+                  <h3 className="text-3xl md:text-4xl font-heading font-bold text-luxury-navy mb-4">
+                    {room.name}
+                  </h3>
+                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                    {room.description}
+                  </p>
+                  
+                  <div>
+                    <div className="flex items-center gap-2 text-luxury-gold mb-4">
+                      <FontAwesomeIcon icon={faUsers} className="w-5 h-5" />
+                      <span className="font-semibold">{room.capacity}</span>
+                    </div>
+                    
+                    <h4 className="font-semibold text-luxury-navy mb-3">Amenities:</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {room.amenities.map((amenity, i) => (
+                        <div key={i} className="flex items-center gap-2 text-gray-700">
+                          <FontAwesomeIcon icon={faCheckCircle} className="w-4 h-4 text-luxury-gold" />
+                          <span>{amenity}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        <Image
-          src="/10-dr.jpeg"
-          className="w-full h-96 object-cover rounded my-4"
-          width={500}
-          height={500}
-          alt="Banquet halls for parties in Malda"
-        />
-
-        <p className="text-amber-800 mx-12">
-          As one of the leading hotels in Malda, we offer a range of exceptional
-          services and amenities to make your stay even more memorable. Our chic fine dine restaurant will give you the perfect ambience with great interiors, awesome music and delicious food to lighten your mood after a tiring day.
-        </p>
-
-
-        <Image
-          src="/rooms/deluxe.jpeg"
-          className="w-full h-96 object-cover rounded my-4"
-          width={500}
-          height={500}
-          alt="Deluxe room in Hotel Landmark Malda"
-        />
-        <Image
-          src="/rooms/suite-1.jpg"
-          className="w-full h-96 object-cover rounded my-4"
-          width={500}
-          height={500}
-          alt="Luxury Suite room in Hotel Landmark Malda"
-        />
-
-        <Image
-          src="/rooms/in-house-restro.jpg"
-          // className="w-full h-96 object-cover rounded my-4"
-          width={500}
-          height={500}
-          alt="In house restaurant of Hotel Landmark Malsa"
-        />
-
-        <p className="text-lime-800 mx-12">
-          So why wait? Book your stay at Landmark at Malda, one of the top
-          hotels in Malda, today and experience the best that West Bengal has to
-          offer!
-        </p>
-
-       
-
-        <Link href="tel:+919641693184" target="_blank">
-          <div className="text-center hover:bg-amber-800 font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-2xl shadow-yellow-600 hover:shadow-amber-600 hover:text-white transition duration-200 ease-in-out">
-            <div className="flex items-center justify-center">
-              <FontAwesomeIcon icon={faPhone} color="black" width={40} />
-              <div>
-                <strong>+91-96416-93184</strong>
+      {/* Additional Images Gallery */}
+      <section className="luxury-section bg-white">
+        <div className="luxury-container">
+          <h2 className="luxury-heading text-center mb-12">
+            Explore Our Property
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="luxury-card overflow-hidden">
+              <div className="relative h-80">
+                <Image
+                  src="/rooms/exterior.jpg"
+                  alt="Hotel Landmark Exterior View"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-heading font-semibold text-luxury-navy">Exterior</h3>
+              </div>
+            </div>
+            <div className="luxury-card overflow-hidden">
+              <div className="relative h-80">
+                <Image
+                  src="/rooms/entrance.jpeg"
+                  alt="Hotel Landmark Entrance"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-heading font-semibold text-luxury-navy">Entrance</h3>
+              </div>
+            </div>
+            <div className="luxury-card overflow-hidden">
+              <div className="relative h-80">
+                <Image
+                  src="/rooms/in-house-restro.jpg"
+                  alt="In-House Restaurant"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-heading font-semibold text-luxury-navy">In-House Restaurant</h3>
               </div>
             </div>
           </div>
-        </Link>
+        </div>
+      </section>
 
-        <p className="text-amber-800 mx-12">
-          Check our state of the art
-          <Link
-            href="/banquet-malda-wb"
-            className="text-indigo-500 font-bold underline-offset-8 underline"
-          >
-            {" "}
-            banquet in Malda
-          </Link>
-          . Our team is dedicated to crafting the ideal setting for your special
-          moments, ensuring that every detail is meticulously planned to exceed
-          your expectations.
-        </p>
-      </div>
+      {/* Why Choose Us */}
+      <section className="luxury-section bg-luxury-cream">
+        <div className="luxury-container">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="luxury-heading text-center mb-12">
+              Why Choose Hotel Landmark?
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-2xl font-heading font-semibold text-luxury-navy mb-4">
+                  Prime Location
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Located just minutes from the main market attractions of Malda, our hotel offers 
+                  unparalleled convenience for both business and leisure travelers.
+                </p>
+              </div>
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-2xl font-heading font-semibold text-luxury-navy mb-4">
+                  Exceptional Service
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Our housekeeping staff is specially trained to meet every need at any hour of the day. 
+                  Guests consistently rave about our amazing service.
+                </p>
+              </div>
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-2xl font-heading font-semibold text-luxury-navy mb-4">
+                  Business Traveler Favorite
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  With a retention rate of over 70%, we are proud to be the preferred choice among 
+                  business travelers visiting Malda.
+                </p>
+              </div>
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-2xl font-heading font-semibold text-luxury-navy mb-4">
+                  Modern Amenities
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  All rooms feature modern conveniences including free WiFi, air conditioning, 
+                  and 24/7 room service. Our 3-storey hotel is equipped with lift facility for easy access to all floors.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Banquet CTA */}
+      <section className="luxury-section bg-white">
+        <div className="luxury-container">
+          <div className="bg-gradient-luxury text-white rounded-2xl p-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+              Planning an Event?
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Check out our state-of-the-art banquet hall, perfect for weddings, corporate events, 
+              and special celebrations.
+            </p>
+            <Link href="/banquet-malda-wb" className="bg-luxury-gold hover:bg-luxury-gold-light text-luxury-navy font-semibold px-8 py-4 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl inline-block">
+              Explore Banquet Hall
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="luxury-section bg-luxury-navy text-white">
+        <div className="luxury-container text-center">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+            Book Your Stay Today
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Experience the best hospitality Malda has to offer
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="tel:+919641693184" className="bg-luxury-gold hover:bg-luxury-gold-light text-luxury-navy font-semibold px-8 py-4 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3">
+              <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
+              <span>Call: +91-96416-93184</span>
+            </Link>
+            <Link href="https://wa.me/919641693184" target="_blank" className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl">
+              WhatsApp Us
+            </Link>
+          </div>
+          <div className="mt-8">
+            <Link 
+              href={googleBusinessProfile}
+              target="_blank"
+              className="text-luxury-gold hover:text-luxury-gold-light underline"
+            >
+              Read our reviews on Google
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

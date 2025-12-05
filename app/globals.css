@@ -1,13 +1,45 @@
 @tailwind base;
 @tailwind components;
-.prim-link {
-  @apply animate bg-amber-400 p-6 text-black mx-auto text-xl sm:text-3xl font-semibold hover:text-white border hover:bg-lime-700 hover:border-amber-800 rounded-full hover:shadow-xl shadow-xl
-}
-.animate {
-  @apply transition ease-in hover:scale-110 duration-300
-}
 @tailwind utilities;
 
-body {
-  background: #e2e3cd;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-luxury-cream text-luxury-gray-dark font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .luxury-btn-primary {
+    @apply bg-luxury-gold hover:bg-luxury-gold-light text-luxury-navy font-semibold px-8 py-3 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .luxury-btn-secondary {
+    @apply bg-luxury-navy hover:bg-luxury-charcoal text-luxury-cream font-semibold px-8 py-3 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .luxury-card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+  }
+  
+  .luxury-section {
+    @apply py-16 md:py-24;
+  }
+  
+  .luxury-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .luxury-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-heading text-luxury-navy mb-6;
+  }
+  
+  .luxury-subheading {
+    @apply text-2xl md:text-3xl font-heading text-luxury-charcoal mb-4;
+  }
 }

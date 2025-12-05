@@ -1,189 +1,386 @@
-import { Cinzel_Decorative} from '@next/font/google';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {faWifi, faSnowflake, faUser, faBowlFood, faLocation, faStar, faPhone, faChampagneGlasses, faCakeCandles, faLocationDot, faMapPin, faArrowRight, faArrowRightArrowLeft, faArrowRightLong} from "@fortawesome/free-solid-svg-icons"
+import {faWifi, faSnowflake, faUser, faLocationDot, faStar, faPhone, faChampagneGlasses, faMapPin} from "@fortawesome/free-solid-svg-icons"
 import Link from 'next/link'
 import Image from 'next/image'
 
-export const header = Cinzel_Decorative({ 
-  subsets: ['latin'],
-  weight: ['700', '700'],
-});
 export default function Home() {
   return (
-    <main className="w-full h-full my-3">
+    <main className="w-full">
       
-      {/* <div className="relative">
-        <Image
-          src="/cover2.png"
-          alt="Hotel Landmark Malda"
-          width="0"
-          height="0"
-          sizes="100vw"
-          className="w-full h-auto"
-        />
-      </div> */}
-      <Link href="/banquet-malda-wb" className="animate-bounce bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 m-auto flex py-1 md:py-2 text-white hover:from-pink-500 hover:to-yellow-500">
-        <div className='md:text-xl m-auto'>
-          <FontAwesomeIcon icon={faCakeCandles} width="20" height="20" className="inline"/>
-          <span>✨ BANQUET CUM CONFERENCE HALL ✨</span>
-          <FontAwesomeIcon icon={faArrowRightLong} width="20" height="20" className="inline"/>
+      {/* Hero Section */}
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/cover2.png"
+            alt="Hotel Landmark Malda - Luxury Hospitality"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-luxury-navy/80 to-luxury-charcoal/60"></div>
         </div>
-      </Link>
-      <div className="m-auto max-w-[80%] flex flex-col lg:gap-y-8 mt-12">
-        <div className="flex flex-col lg:flex-row gap-y-16 justify-center text-center ">
-          <div className="flex flex-col gap-y-4 justify-center text-center">
-            <div className={`text-5xl sm:text-6xl md:text-8xl lg:text-7xl flex flex-col text-center trans ${header.className}`}>
-              <h1>Welcome to</h1>
-              <h1>Hotel Landmark,</h1>
-              <h1>Malda</h1>
-            </div>
-            <p className="font-thin text-center text-2xl sm:text-xl md:text-3xl my-8 italic">
-              Feel the difference
+        
+        <div className="relative z-10 text-center text-white luxury-container">
+          <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 animate-fade-in">
+            Welcome to Hotel Landmark
+          </h1>
+          <p className="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto">
+            Experience luxury hospitality in the heart of Malda
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/hotel-malda-wb" className="luxury-btn-primary">
+              Explore Rooms
+            </Link>
+            <Link href="tel:+919641693184" className="luxury-btn-secondary">
+              Book Now
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Banquet Highlight Banner */}
+      <section className="bg-gradient-to-r from-luxury-gold to-luxury-gold-light py-4">
+        <Link href="/banquet-malda-wb" className="block">
+          <div className="luxury-container text-center">
+            <p className="text-luxury-navy font-semibold text-lg md:text-xl flex items-center justify-center gap-3">
+              <FontAwesomeIcon icon={faChampagneGlasses} className="w-6 h-6" />
+              <span>✨ HOTEL LANDMARK BANQUET HALL FOR YOUR SPECIAL EVENTS ✨</span>
+              <span className="hidden sm:inline">→</span>
             </p>
-            <div className="flex justify-center">
-              <Image className="max-w-full h-full rounded-lg object-cover " src="/HL.png" alt="hotel landmark logo" width="300" height="300"/>
-            </div>
-            <div className="block grid-col-1 content-center gap-4 text-center">
-              <div className='text-xl'>Call us at <strong>+91-96416-93184</strong> 
-                <Link href="tel:+919641693184" target="_blank">
-                    <div className=" transition duration-200 ease-in-out text-center text-2xl bg-pink-400 hover:bg-pink-500 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-pink-300">📞 96416-93184</div>
-                </Link> 
-                or whatsapp! 
-                <Link href="https://wa.me/919641693184" target="_blank">
-                    <div className=" transition duration-200 ease-in-out text-center text-2xl bg-pink-400 hover:bg-pink-500 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-pink-300">96416-93184</div>
-                </Link> 
-                for booking purpose or any other queries.
-              </div>
-            </div>
           </div>
-        </div>
-        <div className="border-y-black py-1 md:py-2 text-center md:text-xl text-sm mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Image className="max-w-full h-full rounded-lg object-cover shadow-2xl" src="/rooms/exterior.jpg" alt="hotel landmark exterior" width="480" height="640"/>
-          <Image className="max-w-full h-full rounded-lg object-cover shadow-2xl" src="/rooms/entrance.jpeg" alt="hotel landmark entrace" width="480" height="640"/>
-        </div>
-        <div className="border-y-black py-1 md:py-2 px-4 text-center md:text-xl text-sm my-4">
-          <FontAwesomeIcon icon={faLocationDot} width="20" height="20" className="inline"/>
-          <span className="">Rabindra Avenue, Above Overseas Bank, near Raj Hotel, Malda</span>
-        </div>
-        <div className="inline-block">
-          <p className="flex justify-center">&apos;&apos;We are proud to say that having a retention rate of greater than 70%, we are a favourite amongst the business travellers! So book your next stay with us to never search for another hotel in Malda&apos;&apos;</p>
-          <Link
-            href="/hotel-malda-wb"
-            className="hover:text-amber-500 transition duration-200 hover:scale-105 w-48"
-          >
-            <div className="w-72 m-auto transition duration-200 ease-in-out shadow-md hover:shadow-xl text-center text-xl bg-pink-800 hover:bg-amber-400 hover:text-black text-white font-bold px-4 py-2 my-4 rounded cursor-pointer dark:bg-pink-400">Check our Rooms...</div>
-          </Link> 
-        </div>
-        <div className='m-auto text-center mt-8 md:mt-0 text-pink-500'>
-          <FontAwesomeIcon icon={faChampagneGlasses} beatFade width="50" height="50" className="inline-block animate-spin" />
-          <strong> OUR ALL-NEW RESTRO IS HERE!</strong>
-        </div>
-        {/* <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-4">
-          <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-1.jpg" alt="Malda banquet booking" width="300" height="450"/>
-          </div>
-          <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-2.jpg" alt="banquet in malda" width="300" height="300"/>
-          </div>
-          <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-3.jpg" alt="Banquet services Malda" width="300" height="300"/>
-          </div>
-          <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-4.jpg" alt="Party hall in Malda" width="300" height="300"/>
-          </div>
-          <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-5.jpg" alt="Malda event venue" width="300" height="300"/>
-          </div>
-          <div>
-              <Image className="h-auto max-w-full rounded-lg" src="/site-photo/rest-6.jpg" alt="Corporate event venue Malda" width="300" height="300"/>
-          </div>
-        </div> */}
-        <div className="md:flex bg-slate-100 rounded-xl p-2 md:p-4 border-black border-2">
-          <Image className="w-48 h-48 mx-auto" src="/prim-logo.png" alt="Banquet for birthday party in Malda" width="384" height="384"/>
-          <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
-            <blockquote>
-              <p className="text-lg font-medium">
-                Immerse yourself in a warm, inviting ambiance where each meal is an unforgettable journey. Our restaurant, a symphony of tastes, offers a menu crafted with passion. Come savor the art of delicious dining – an experience that goes beyond the plate.
+        </Link>
+      </section>
+
+      {/* Welcome Section */}
+      <section className="luxury-section bg-white">
+        <div className="luxury-container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="luxury-heading">
+                Feel the Difference
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Welcome to Hotel Landmark, the premier destination for travelers in Malda, West Bengal. 
+                Nestled in the heart of the city, our hotel offers luxurious accommodations and exceptional 
+                amenities that ensure your stay is unforgettable.
               </p>
-            </blockquote>
-            <figcaption className="font-medium">
-              <div className="text-pink-400">
-                Royal Touch
-              </div>
-              <div className="text-pink-700">
-                Fine Dine Restaurant
-              </div>
-              <div className="inline-block">
-                <Link href="https://royaltouch.my.canva.site/" target="_blank">
-                      <div className="transition duration-200 ease-in-out text-center text-xl bg-pink-800 hover:bg-amber-400 hover:text-black text-white font-bold px-4 py-2 my-4 rounded cursor-pointer dark:bg-pink-400">Learn more...</div>
-                </Link> 
-              </div>
-            </figcaption>
-          </div>
-        </div>
-
-
-        <div className="grid lg:grid-cols-5 grid-col-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4 mt-12">
-          <div className="rounded-sm p-8 text-center shadow-2xl">
-            <FontAwesomeIcon icon={faWifi} />
-            <p>Free Wifi</p>
-          </div>
-          <div className="rounded-sm p-8 text-center  text-amber-900 shadow-2xl">
-            <FontAwesomeIcon icon={faLocation} />
-            <p>Prime Location</p>
-          </div>
-          <div className="rounded-sm p-8 text-center shadow-2xl">
-            <FontAwesomeIcon icon={faSnowflake} />
-            <p>Air Conditioning</p>
-          </div>
-          <div className="rounded-sm p-8 text-center text-amber-900 shadow-2xl">
-            <FontAwesomeIcon icon={faUser} />
-            <p>Room Service</p>
-          </div>
-          <div className="rounded-sm p-8 text-center shadow-2xl">
-            <FontAwesomeIcon icon={faBowlFood} />
-            <p>Fine Dine Restaurant</p>
-          </div>
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-16 justify-center text-center m-auto mt-12">
-          <div className="flex flex-col justify-center text-center">
-            <div className="text-5xl sm:text-6xl md:text-8xl lg:text-7xl flex flex-col text-center">
-              <h1>Have you visited</h1>
-              <h1>us before?</h1>
-            </div>
-            <p className="font-thin text-center text-2xl sm:text-xl md:text-3xl my-12 italic">
-              We would love to hear your feedback.
-            </p>
-            <div className='text-xl'>
-              Whatsapp us 
-              <span className="inline-flex items-baseline">
-              <FontAwesomeIcon icon={faPhone} color="violet" width={40}/>
-              <Link href="http://wa.me/919435117480" target="_blank">
-                <div className='underline underline-offset-4 text-blue-700  transition duration-200 ease-in-out'>&nbsp;here&nbsp;</div>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                With a retention rate of over 70%, we are proud to be the favorite choice among business 
+                travelers. Experience the perfect blend of comfort, elegance, and hospitality.
+              </p>
+              <Link href="/hotel-malda-wb" className="luxury-btn-primary inline-block">
+                Discover Our Rooms
               </Link>
-              </span>
-              for any complaints. We will make sure your issue gets resolved.
             </div>
-          </div>
-          <div className="block grid-col-1 content-center gap-4 text-center">
-            <span className="grid grid-cols-5 gap-4">
-              <span><FontAwesomeIcon icon={faStar} color="violet" className="animate-ping" /></span>
-              <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping"  /></span>
-              <span><FontAwesomeIcon icon={faStar} color="violet" className="animate-ping"  /></span>
-              <span><FontAwesomeIcon icon={faStar} color="pink" className="animate-ping"  /></span>
-              <span><FontAwesomeIcon icon={faStar} color="violet" className="animate-ping"  /></span>
-              <span></span>
-            </span>
-            <Link href="https://g.page/r/CY7o7t2FEsdPEBM/review" target="_blank">
-              <div className="text-center text-3xl bg-amber-400 hover:bg-amber-800 font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-amber-600 hover:text-white  transition duration-500 ease-in-out">Rate us here</div>
-            </Link>  
-            <div className="font-thin text-center text-2xl sm:text-xl md:text-3xl my-12 block grid-col-1 ">
-              “If you hated us, tell us. If you loved us, tell others!“
+            <div className="relative h-[400px] md:h-[500px]">
+              <Image 
+                src="/HL.png" 
+                alt="Hotel Landmark Logo" 
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Property Images */}
+      <section className="luxury-section bg-luxury-cream">
+        <div className="luxury-container">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="luxury-card group">
+              <div className="relative h-[400px]">
+                <Image 
+                  src="/rooms/Reception.jpg" 
+                  alt="Hotel Landmark Exterior" 
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+            <div className="luxury-card overflow-hidden group">
+              <div className="relative h-[400px]">
+                <Image 
+                  src="/rooms/entrance.jpeg" 
+                  alt="Hotel Landmark Entrance" 
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Location */}
+      <section className="bg-luxury-navy text-white py-6">
+        <div className="luxury-container">
+          <div className="flex items-center justify-center gap-3 text-center">
+            <FontAwesomeIcon icon={faLocationDot} className="w-5 h-5 text-luxury-gold" />
+            <p className="text-sm md:text-base">
+              Rabindra Avenue, Above Overseas Bank, near Raj Hotel, Malda
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Amenities Section */}
+      <section className="luxury-section bg-white">
+        <div className="luxury-container">
+          <h2 className="luxury-heading text-center mb-12">
+            Premium Amenities
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center p-6 luxury-card">
+              <div className="w-16 h-16 mx-auto mb-4 bg-luxury-gold/10 rounded-full flex items-center justify-center">
+                <FontAwesomeIcon icon={faWifi} className="w-8 h-8 text-luxury-gold" />
+              </div>
+              <h3 className="font-semibold text-luxury-navy mb-2">Free WiFi</h3>
+              <p className="text-sm text-gray-600">High-speed internet</p>
+            </div>
+            <div className="text-center p-6 luxury-card">
+              <div className="w-16 h-16 mx-auto mb-4 bg-luxury-gold/10 rounded-full flex items-center justify-center">
+                <FontAwesomeIcon icon={faMapPin} className="w-8 h-8 text-luxury-gold" />
+              </div>
+              <h3 className="font-semibold text-luxury-navy mb-2">Prime Location</h3>
+              <p className="text-sm text-gray-600">Heart of Malda</p>
+            </div>
+            <div className="text-center p-6 luxury-card">
+              <div className="w-16 h-16 mx-auto mb-4 bg-luxury-gold/10 rounded-full flex items-center justify-center">
+                <FontAwesomeIcon icon={faSnowflake} className="w-8 h-8 text-luxury-gold" />
+              </div>
+              <h3 className="font-semibold text-luxury-navy mb-2">Air Conditioning</h3>
+              <p className="text-sm text-gray-600">Climate controlled</p>
+            </div>
+            <div className="text-center p-6 luxury-card">
+              <div className="w-16 h-16 mx-auto mb-4 bg-luxury-gold/10 rounded-full flex items-center justify-center">
+                <FontAwesomeIcon icon={faUser} className="w-8 h-8 text-luxury-gold" />
+              </div>
+              <h3 className="font-semibold text-luxury-navy mb-2">Room Service</h3>
+              <p className="text-sm text-gray-600">24/7 availability</p>
+            </div>
+            <div className="text-center p-6 luxury-card col-span-2 md:col-span-4">
+              <p className="text-sm text-gray-600">
+                <strong>Note:</strong> Our 3-storey hotel features lift facility for easy access. Parking space is not available on premises.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Rooms Preview */}
+      <section className="luxury-section bg-luxury-cream">
+        <div className="luxury-container">
+          <div className="text-center mb-12">
+            <h2 className="luxury-heading">
+              Fine Accommodations
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Choose from our selection of elegantly appointed rooms designed for your comfort
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="luxury-card">
+              <div className="relative h-64">
+                <Image 
+                  src="/rooms/deluxe2.jpeg" 
+                  alt="Economy Room" 
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-heading font-semibold text-luxury-navy mb-2">Economy</h3>
+                <p className="text-gray-600">Comfortable and affordable</p>
+              </div>
+            </div>
+            <div className="luxury-card">
+              <div className="relative h-64">
+                <Image 
+                  src="/rooms/deluxe.jpeg" 
+                  alt="Deluxe Room" 
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-heading font-semibold text-luxury-navy mb-2">Deluxe</h3>
+                <p className="text-gray-600">Premium comfort and style</p>
+              </div>
+            </div>
+            <div className="luxury-card">
+              <div className="relative h-64">
+                <Image 
+                  src="/rooms/suite-1.jpg" 
+                  alt="Suite Room" 
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-heading font-semibold text-luxury-navy mb-2">Suite</h3>
+                <p className="text-gray-600">Ultimate luxury experience</p>
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <Link href="/hotel-malda-wb" className="luxury-btn-primary">
+              View All Rooms
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Restaurant Section */}
+      <section className="luxury-section bg-white">
+        <div className="luxury-container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="luxury-heading">
+                In-House Restaurant
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Savor delicious cuisine at our in-house restaurant. Experience a delightful dining 
+                atmosphere with a menu crafted to satisfy every palate.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-gray-700">
+                  <span className="w-2 h-2 bg-luxury-gold rounded-full"></span>
+                  Multi-cuisine menu
+                </li>
+                <li className="flex items-center gap-3 text-gray-700">
+                  <span className="w-2 h-2 bg-luxury-gold rounded-full"></span>
+                  Comfortable dining ambiance
+                </li>
+                <li className="flex items-center gap-3 text-gray-700">
+                  <span className="w-2 h-2 bg-luxury-gold rounded-full"></span>
+                  Room service available
+                </li>
+                <li className="flex items-center gap-3 text-gray-700">
+                  <span className="w-2 h-2 bg-luxury-gold rounded-full"></span>
+                  Fresh, quality ingredients
+                </li>
+              </ul>
+            </div>
+            <div className="relative h-[400px] md:h-[500px] luxury-card overflow-hidden">
+              <Image 
+                src="/rooms/in-house-restro.jpg" 
+                alt="In-House Restaurant at Hotel Landmark" 
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Banquet Preview */}
+      <section className="luxury-section bg-luxury-cream">
+        <div className="luxury-container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative h-[400px] md:h-[500px] luxury-card overflow-hidden">
+              <Image 
+                src="/banquet.png" 
+                alt="Banquet Hall" 
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="luxury-heading">
+                Elegant Banquet Hall
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Host your special events in our state-of-the-art banquet hall. Perfect for weddings, 
+                corporate events, and celebrations of all kinds.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-gray-700">
+                  <span className="w-2 h-2 bg-luxury-gold rounded-full"></span>
+                  Capacity up to 200 guests
+                </li>
+                <li className="flex items-center gap-3 text-gray-700">
+                  <span className="w-2 h-2 bg-luxury-gold rounded-full"></span>
+                  Modern audio-visual equipment
+                </li>
+                <li className="flex items-center gap-3 text-gray-700">
+                  <span className="w-2 h-2 bg-luxury-gold rounded-full"></span>
+                  Professional catering services
+                </li>
+                <li className="flex items-center gap-3 text-gray-700">
+                  <span className="w-2 h-2 bg-luxury-gold rounded-full"></span>
+                  Elegant ambiance
+                </li>
+              </ul>
+              <Link href="/banquet-malda-wb" className="luxury-btn-primary">
+                Explore Banquet Hall
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA Section */}
+      <section className="luxury-section bg-luxury-navy text-white">
+        <div className="luxury-container text-center">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+            Ready to Book Your Stay?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Contact us today for reservations and inquiries
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Link href="tel:+919641693184" className="bg-luxury-gold hover:bg-luxury-gold-light text-luxury-navy font-semibold px-8 py-4 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3">
+              <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
+              <span>Call: +91-96416-93184</span>
+            </Link>
+            <Link href="https://wa.me/919641693184" target="_blank" className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl">
+              WhatsApp Us
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="luxury-section bg-luxury-cream">
+        <div className="luxury-container">
+          <div className="text-center mb-12">
+            <h2 className="luxury-heading">
+              Guest Reviews
+            </h2>
+            <p className="text-xl text-gray-600">
+              See what our guests have to say
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex justify-center gap-2 mb-6">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <FontAwesomeIcon key={star} icon={faStar} className="w-8 h-8 text-luxury-gold" />
+              ))}
+            </div>
+            <p className="text-lg text-gray-700 mb-8 italic">
+              &ldquo;If you loved us, tell others! If you hated us, tell us!&rdquo;
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="https://g.page/r/CY7o7t2FEsdPEBM/review" 
+                target="_blank"
+                className="luxury-btn-primary"
+              >
+                Rate Us on Google
+              </Link>
+              <Link 
+                href="http://wa.me/919435117480" 
+                target="_blank"
+                className="luxury-btn-secondary"
+              >
+                Send Feedback
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   )
 }
