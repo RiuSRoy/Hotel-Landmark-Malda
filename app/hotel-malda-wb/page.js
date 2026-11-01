@@ -11,7 +11,7 @@ import { categories, roomTypes, categoryById, guestLabel } from "@/lib/rooms";
 export const metadata = {
   title: "Rooms in Malda – Single, Double, Triple & Suite",
   description:
-    "Business hotel rooms in Malda for 1, 2 or 3 guests: Single, Double and Triple rooms in Economy and Deluxe, plus Suites. Free Wi-Fi, AC and complimentary breakfast at Hotel Landmark, Rabindra Avenue.",
+    "Business hotel rooms in Malda for 1, 2 or 3 guests: Single, Double and Triple rooms in Economy and Deluxe, plus Suites with an additional room for an assistant. Free Wi-Fi, AC and complimentary breakfast at Hotel Landmark, Rabindra Avenue.",
 };
 
 const guestGroups = [1, 2, 3].map((guests) => ({
@@ -116,7 +116,7 @@ export default function Rooms() {
         eyebrow="Rooms"
         title="Rooms for business in Malda"
       >
-        {roomTypes.length} room types for 1, 2 or 3 guests, in Economy or Deluxe — plus Suites for longer stays.
+        {roomTypes.length} room types for 1, 2 or 3 guests, in Economy or Deluxe — plus Suites with an additional room for guests travelling with an assistant.
       </PageHero>
 
       {/* Comfort levels */}

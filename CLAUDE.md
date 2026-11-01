@@ -20,7 +20,7 @@ There is no test framework configured.
 ## Architecture
 
 - **Next.js 13.5 App Router** in `app/`. Each route is a single `page.js` with hard-coded content and its own `export const metadata` (titles get the ` | Hotel Landmark Malda` suffix from the template in `app/layout.js`, so don't repeat it).
-- `app/layout.js` loads fonts via `next/font` (Outfit → `--font-display`, Inter → `--font-body`) and wraps every page in `<Navigation />`, `<main>`, and `app/footer.js`. Pages should not render their own `<main>`.
+- `app/layout.js` loads self-hosted fonts from `app/fonts/` via `next/font/local` (Outfit → `--font-display`, Inter → `--font-body`). Don't switch back to `next/font/google`: on Next 13.5 it crashed Vercel builds (`Cannot read properties of null (reading '1')` in the Google font loader). It also and wraps every page in `<Navigation />`, `<main>`, and `app/footer.js`. Pages should not render their own `<main>`.
 - **All contact details and external links live in `lib/site.js`** (`site.phones.booking | reception | banquet | feedback`, each with `display`, `tel`, `whatsapp`). Never hard-code phone numbers, emails, or map/review URLs in pages.
 - **Rooms live in `lib/rooms.js`**: `categories` (Economy, Deluxe, Suite — the only rooms shown on the homepage) and `roomTypes` (every bookable type, shown on `/hotel-malda-wb` grouped by guest count; each `id` is an anchor). A room type without its own `image` falls back to its category photo and is labelled "Representative photo".
 - Shared building blocks: `components/PageHero.js` (photo header for inner pages) and `components/CtaBand.js` (closing call/WhatsApp band, takes a `site.phones.*` entry).

@@ -1,18 +1,23 @@
 import "./globals.css";
-import { Outfit, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import Footer from "./footer";
 import Navigation from "@/components/Navigation";
 
-const display = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+// Fonts are self-hosted (variable woff2, latin subset, from Google Fonts — SIL OFL) instead of
+// next/font/google, so builds never depend on fetching from Google. Next 13's Google font loader
+// crashed on Vercel when Google returned font URLs it couldn't parse.
+const display = localFont({
+  src: "./fonts/Outfit-latin.woff2",
+  weight: "400 700",
   variable: "--font-display",
+  display: "swap",
 });
 
-const body = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const body = localFont({
+  src: "./fonts/Inter-latin.woff2",
+  weight: "400 600",
   variable: "--font-body",
+  display: "swap",
 });
 
 export const metadata = {
