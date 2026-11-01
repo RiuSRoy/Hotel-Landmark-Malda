@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Marketing website for Hotel Landmark, Malda (West Bengal), positioned as a **business hotel**: rooms, plus "Hotel Landmark Banquet & Restaurant" (formerly "Royal Touch" — that name must not reappear). The site's goal is driving direct bookings via phone/WhatsApp and ranking in local search. There is no backend or booking system. Deployed on Vercel (`vercel.json`); Node 20 (`.nvmrc`).
+Marketing website for Hotel Landmark, Malda (West Bengal), positioned as a **business hotel**: rooms, plus "Hotel Landmark Banquet & Restaurant" (formerly "Royal Touch" — that name must not reappear). The site's goal is driving direct bookings via phone/WhatsApp and ranking in local search. There is no backend or booking system. Deployed on Vercel (`vercel.json`); Node 24 (`.nvmrc` and `engines` in `package.json` — keep them pinned to one major so Vercel does not auto-upgrade).
 
 ## Commands
 
