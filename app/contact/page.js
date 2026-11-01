@@ -47,8 +47,16 @@ export default function Contact() {
             <h2 className="mt-3 text-2xl font-semibold">{site.name}</h2>
             <div className="mt-7 space-y-6">
               <ContactRow icon={faPhone} label="Bookings & reception">
-                <Link href={site.phones.booking.tel} className={phoneLink}>{site.phones.booking.display}</Link>
-                <Link href={site.phones.reception.tel} className={phoneLink}>{site.phones.reception.display}</Link>
+                <Link href={site.phones.booking.tel} className={`${phoneLink} font-semibold text-brand-ink`}>
+                  {site.phones.booking.display}{" "}
+                  <span className="text-xs font-medium text-brand-rust">· preferred for bookings</span>
+                </Link>
+                {site.phones.reception.tel !== site.phones.booking.tel && (
+                  <Link href={site.phones.reception.tel} className={phoneLink}>
+                    {site.phones.reception.display}{" "}
+                    <span className="text-xs text-stone-500">· mobile &amp; WhatsApp</span>
+                  </Link>
+                )}
                 {site.phones.landlines.map((number) => (
                   <p key={number} className="text-stone-500">{number}</p>
                 ))}

@@ -21,7 +21,7 @@ export const metadata = {
     template: "%s | Hotel Landmark Malda",
   },
   description:
-    "Hotel Landmark is a business hotel on Rabindra Avenue, Malda, West Bengal, with Economy, Deluxe and Suite rooms, a 200-guest banquet hall and an in-house restaurant.",
+    "Hotel Landmark is a business hotel on Rabindra Avenue, Malda, West Bengal, with Economy, Deluxe and Suite rooms for 1 to 3 guests, a 200-guest banquet hall and an in-house restaurant.",
   icons: { icon: "/favicon.ico" },
 };
 

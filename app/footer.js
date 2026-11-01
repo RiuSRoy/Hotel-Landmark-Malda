@@ -44,9 +44,11 @@ export default function Footer() {
                   <Link href={site.phones.booking.tel} className={`${linkClass} block`}>
                     {site.phones.booking.display}
                   </Link>
-                  <Link href={site.phones.reception.tel} className={`${linkClass} block`}>
-                    {site.phones.reception.display}
-                  </Link>
+                  {site.phones.reception.tel !== site.phones.booking.tel && (
+                    <Link href={site.phones.reception.tel} className={`${linkClass} block`}>
+                      {site.phones.reception.display}
+                    </Link>
+                  )}
                   <span className="text-stone-400">{site.phones.landlines[0]}</span>
                 </div>
               </li>

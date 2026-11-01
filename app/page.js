@@ -5,7 +5,7 @@ import {
   faPhone,
   faWifi,
   faSnowflake,
-  faBellConcierge,
+  faMugHot,
   faElevator,
   faLocationDot,
   faArrowRight,
@@ -14,12 +14,13 @@ import {
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import CtaBand from "@/components/CtaBand";
 import { site } from "@/lib/site";
+import { categories, roomTypes } from "@/lib/rooms";
 
 const facts = [
-  { value: "3", label: "Room categories" },
+  { value: String(roomTypes.length), label: "Room types" },
   { value: "200", label: "Guest banquet hall" },
   { value: "70%+", label: "Business guests return" },
-  { value: "24/7", label: "Room service" },
+  { value: "Free", label: "Breakfast in our restaurant" },
 ];
 
 const reasons = [
@@ -39,16 +40,10 @@ const reasons = [
     text: "Clean, quiet, climate-controlled rooms with fresh linen.",
   },
   {
-    icon: faBellConcierge,
-    title: "Round-the-clock service",
-    text: "Housekeeping and room service whenever you need them.",
+    icon: faMugHot,
+    title: "Breakfast included",
+    text: `Complimentary breakfast in our restaurant, ${site.breakfastHours}. Room service for lunch and dinner.`,
   },
-];
-
-const rooms = [
-  { name: "Economy", image: "/rooms/economy.jpg", text: "A practical single room for short work trips.", guests: "1 guest" },
-  { name: "Deluxe", image: "/rooms/deluxe2.jpeg", text: "More space, a work-friendly layout and premium TV.", guests: "2 guests" },
-  { name: "Suite", image: "/rooms/suite-1.jpg", text: "A separate seating area for longer stays or small meetings.", guests: "2–3 guests" },
 ];
 
 export default function Home() {
@@ -91,13 +86,15 @@ export default function Home() {
 
       {/* Key facts */}
       <section className="bg-white border-b border-brand-line">
-        <div className="container-site grid grid-cols-2 md:grid-cols-4 gap-px bg-brand-line">
-          {facts.map((fact) => (
-            <div key={fact.label} className="bg-white px-4 py-7 text-center">
-              <p className="font-display text-3xl font-semibold text-brand-ink">{fact.value}</p>
-              <p className="mt-1 text-sm text-stone-500">{fact.label}</p>
-            </div>
-          ))}
+        <div className="container-site">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-brand-line">
+            {facts.map((fact) => (
+              <div key={fact.label} className="bg-white px-4 py-7 text-center">
+                <p className="font-display text-3xl font-semibold text-brand-ink">{fact.value}</p>
+                <p className="mt-1 text-sm text-stone-500">{fact.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -129,7 +126,7 @@ export default function Home() {
           <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
             <Image
               src="/rooms/Reception.jpg"
-              alt="Deluxe room with double bed at Hotel Landmark Malda"
+              alt="Reception of Hotel Landmark, business hotel in Malda"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
@@ -147,27 +144,24 @@ export default function Home() {
               <h2 className="heading mt-4">Three ways to stay</h2>
             </div>
             <Link href="/hotel-malda-wb" className="text-link">
-              Compare rooms in Malda
+              See all {roomTypes.length} room types in Malda
             </Link>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {rooms.map((room) => (
-              <Link key={room.name} href="/hotel-malda-wb" className="card group">
+            {categories.map((category) => (
+              <Link key={category.id} href="/hotel-malda-wb" className="card group">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src={room.image}
-                    alt={`${room.name} room at Hotel Landmark Malda`}
+                    src={category.image}
+                    alt={`${category.name} room at Hotel Landmark Malda`}
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex items-baseline justify-between">
-                    <h3 className="text-xl font-semibold">{room.name}</h3>
-                    <span className="text-xs font-medium uppercase tracking-wider text-brand-rust">{room.guests}</span>
-                  </div>
-                  <p className="mt-2 text-sm text-stone-600">{room.text}</p>
+                  <h3 className="text-xl font-semibold">{category.name}</h3>
+                  <p className="mt-2 text-sm text-stone-600">{category.summary}</p>
                 </div>
               </Link>
             ))}
@@ -192,7 +186,7 @@ export default function Home() {
               {
                 title: "Restaurant",
                 text: "Multi-cuisine dining in a calm setting — good for a working lunch, a client dinner or a quiet meal after a long day.",
-                image: "/site-photo/rest-2.jpg",
+                image: "/site-photo/rest-ext.webp",
                 alt: "Restaurant dining area at Hotel Landmark Malda",
                 position: "object-[center_35%]",
               },

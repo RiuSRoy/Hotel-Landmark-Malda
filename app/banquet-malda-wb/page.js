@@ -194,7 +194,7 @@ export default function BanquetAndRestaurant() {
               right for a working lunch, a dinner with clients, or a relaxed meal after a long day.
             </p>
             <ul className="mt-6 space-y-2.5">
-              {["Multi-cuisine menu", "Fresh, quality ingredients", "Room service for hotel guests", "Booth seating for small groups"].map(
+              {["Multi-cuisine menu", "Fresh, quality ingredients", `Complimentary breakfast for hotel guests, ${site.breakfastHours}`, "Room service for lunch and dinner", "Booth seating for small groups"].map(
                 (item) => (
                   <li key={item} className="flex gap-3 text-stone-700">
                     <FontAwesomeIcon icon={faCheck} className="w-3.5 h-3.5 mt-1.5 text-brand-amber" />

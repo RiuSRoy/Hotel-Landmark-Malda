@@ -1,46 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faUsers, faCheck, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { site } from "@/lib/site";
+import { categories, roomTypes, categoryById, guestLabel } from "@/lib/rooms";
 
 export const metadata = {
-  title: "Rooms in Malda – Economy, Deluxe & Suite",
+  title: "Rooms in Malda – Single, Double, Triple & Suite",
   description:
-    "Business hotel rooms in Malda: Economy, Deluxe and Suite rooms with free Wi-Fi, AC, room service and complimentary breakfast at Hotel Landmark, Rabindra Avenue.",
+    "Business hotel rooms in Malda for 1, 2 or 3 guests: Single, Double and Triple rooms in Economy and Deluxe, plus Suites. Free Wi-Fi, AC and complimentary breakfast at Hotel Landmark, Rabindra Avenue.",
 };
 
-const rooms = [
-  {
-    id: "economy",
-    name: "Economy Room",
-    description:
-      "A practical, comfortable room for solo travellers on short work trips — everything you need, nothing you don't.",
-    image: "/rooms/economy.jpg",
-    amenities: ["Free Wi‑Fi", "Air conditioning", "TV", "Room service", "Complimentary breakfast"],
-    capacity: "1 guest",
-  },
-  {
-    id: "deluxe",
-    name: "Deluxe Room",
-    description:
-      "More room to spread out, with modern furnishings and a layout that works as well for a laptop session as it does for a good night's sleep.",
-    image: "/rooms/deluxe.jpeg",
-    amenities: ["Free Wi‑Fi", "Air conditioning", "Premium TV", "Room service", "Complimentary breakfast"],
-    capacity: "2 guests",
-  },
-  {
-    id: "suite",
-    name: "Suite",
-    description:
-      "Our largest rooms, with a separate seating area — ideal for longer stays, families, or meeting a colleague without leaving the hotel.",
-    image: "/rooms/suite-1.jpg",
-    amenities: ["Free Wi‑Fi", "Air conditioning", "Premium TV", "Room service", "Living area with sofa", "Complimentary breakfast"],
-    capacity: "2–3 guests",
-  },
-];
+const guestGroups = [1, 2, 3].map((guests) => ({
+  guests,
+  id: `guests-${guests}`,
+  label: `${guests} guest${guests > 1 ? "s" : ""}`,
+  rooms: roomTypes.filter((room) => room.guests === guests && room.category !== "suite"),
+}));
+
+const suite = roomTypes.find((room) => room.category === "suite");
 
 const reasons = [
   {
@@ -61,61 +42,190 @@ const reasons = [
   },
 ];
 
+const whatsappFor = (room) =>
+  `${site.phones.booking.whatsapp}?text=${encodeURIComponent(`Hi, I'd like to book a ${room.name} room at Hotel Landmark.`)}`;
+
+function BookingButtons({ room }) {
+  return (
+    <div className="flex flex-wrap gap-3">
+      <Link href={site.phones.booking.tel} className="btn-primary">
+        <FontAwesomeIcon icon={faPhone} className="w-3.5 h-3.5" />
+        Call to book
+      </Link>
+      <Link href={whatsappFor(room)} target="_blank" className="btn-outline">
+        <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" />
+        WhatsApp
+      </Link>
+    </div>
+  );
+}
+
+function RoomPhoto({ room, sizes }) {
+  const category = categoryById[room.category];
+  return (
+    <div className="relative aspect-[4/3] overflow-hidden">
+      <Image
+        src={room.image ?? category.image}
+        alt={`${room.name} room in Malda at Hotel Landmark`}
+        fill
+        sizes={sizes}
+        className="object-cover"
+      />
+      {!room.image && (
+        <span className="absolute bottom-3 left-3 rounded bg-brand-ink/75 px-2 py-1 text-[11px] font-medium text-white">
+          Representative photo
+        </span>
+      )}
+    </div>
+  );
+}
+
+function RoomCard({ room }) {
+  const category = categoryById[room.category];
+  return (
+    <article id={room.id} className="card scroll-mt-28 flex flex-col">
+      <RoomPhoto room={room} sizes="(min-width: 768px) 50vw, 100vw" />
+      <div className="p-6 md:p-7 flex flex-1 flex-col">
+        <div className="flex items-center justify-between gap-3">
+          <span className="rounded-full bg-brand-amber/15 px-2.5 py-1 text-xs font-semibold text-brand-brown">
+            {category.name}
+          </span>
+          <span className="inline-flex items-center gap-1.5 text-sm text-stone-500">
+            <FontAwesomeIcon icon={faUsers} className="w-3.5 h-3.5" />
+            {guestLabel(room)}
+          </span>
+        </div>
+        <h3 className="mt-4 text-2xl font-semibold">{room.name}</h3>
+        <p className="mt-2 mb-6 text-sm text-stone-600">{category.amenities.join(" · ")}</p>
+        <div className="mt-auto pt-6 border-t border-brand-line">
+          <BookingButtons room={room} />
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function Rooms() {
+  const suiteCategory = categoryById.suite;
+
   return (
     <>
       <PageHero
-        image="/rooms/deluxe2.jpeg"
+        image="/rooms/show.jpeg"
         alt="Hotel room in Malda at Hotel Landmark"
         eyebrow="Rooms"
         title="Rooms for business in Malda"
       >
-        Clean, quiet and well-equipped rooms in the heart of the city. Pick the size that fits your trip.
+        {roomTypes.length} room types for 1, 2 or 3 guests, in Economy or Deluxe — plus Suites for longer stays.
       </PageHero>
 
-      <section className="section">
-        <div className="container-site space-y-16 md:space-y-24">
-          {rooms.map((room, index) => (
-            <article key={room.id} id={room.id} className="grid gap-8 md:grid-cols-2 md:items-center md:gap-14">
-              <div className={`relative aspect-[4/3] rounded-lg overflow-hidden ${index % 2 === 1 ? "md:order-2" : ""}`}>
-                <Image
-                  src={room.image}
-                  alt={`${room.name} at Hotel Landmark Malda`}
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <p className="inline-flex items-center gap-2 text-sm font-medium text-brand-rust">
-                  <FontAwesomeIcon icon={faUsers} className="w-4 h-4" />
-                  {room.capacity}
-                </p>
-                <h2 className="heading mt-3">{room.name}</h2>
-                <p className="lead mt-4">{room.description}</p>
-                <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
-                  {room.amenities.map((amenity) => (
-                    <li key={amenity} className="flex items-center gap-2.5 text-stone-700">
-                      <FontAwesomeIcon icon={faCheck} className="w-3.5 h-3.5 text-brand-amber" />
+      {/* Comfort levels */}
+      <section className="section pb-10 md:pb-12">
+        <div className="container-site">
+          <p className="eyebrow">Choose your comfort</p>
+          <h2 className="heading mt-4">Three levels, one standard of service</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {categories.map((category) => (
+              <div key={category.id} className="card p-6 md:p-7">
+                <h3 className="text-xl font-semibold">{category.name}</h3>
+                <p className="mt-2 text-sm text-stone-600">{category.summary}</p>
+                <ul className="mt-5 space-y-2">
+                  {category.amenities.map((amenity) => (
+                    <li key={amenity} className="flex items-center gap-2.5 text-sm text-stone-700">
+                      <FontAwesomeIcon icon={faCheck} className="w-3 h-3 text-brand-amber" />
                       {amenity}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Link href={site.phones.booking.tel} className="btn-primary">
-                    Call to book
-                  </Link>
-                  <Link href={site.phones.booking.whatsapp} target="_blank" className="btn-outline">
-                    Ask on WhatsApp
-                  </Link>
-                </div>
               </div>
-            </article>
-          ))}
+            ))}
+          </div>
+          <div className="mt-6 rounded-lg border-l-4 border-brand-amber bg-white p-5 md:p-6 text-stone-700">
+            <p>
+              <span className="font-semibold text-brand-ink">Breakfast &amp; room service: </span>
+              Complimentary breakfast is served in our restaurant from {site.breakfastHours} and is not
+              available as room service. Room service is available for lunch and dinner.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="section bg-white border-y border-brand-line">
+      {/* Jump links by guest count */}
+      <nav aria-label="Rooms by number of guests" className="sticky top-16 md:top-20 z-40 bg-brand-sand/95 backdrop-blur border-y border-brand-line">
+        <div className="container-site py-3 flex items-center gap-2 overflow-x-auto">
+          <span className="mr-2 shrink-0 text-sm font-semibold text-brand-ink">How many guests?</span>
+          {guestGroups.map((group) => (
+            <Link
+              key={group.id}
+              href={`#${group.id}`}
+              className="shrink-0 rounded-full border border-brand-ink/15 bg-white px-4 py-1.5 text-sm font-medium text-brand-ink hover:border-brand-amber"
+            >
+              {group.label}
+            </Link>
+          ))}
+          <Link
+            href="#suite"
+            className="shrink-0 rounded-full border border-brand-ink/15 bg-white px-4 py-1.5 text-sm font-medium text-brand-ink hover:border-brand-amber"
+          >
+            Suite
+          </Link>
+        </div>
+      </nav>
+
+      {/* Rooms grouped by guest count */}
+      {guestGroups.map((group, index) => (
+        <section
+          key={group.id}
+          id={group.id}
+          className={`section scroll-mt-28 ${index % 2 === 0 ? "" : "bg-white border-y border-brand-line"}`}
+        >
+          <div className="container-site">
+            <p className="eyebrow">{group.label}</p>
+            <h2 className="heading mt-4">
+              {group.guests === 1 ? "Rooms for solo travellers" : group.guests === 2 ? "Rooms for two" : "Rooms for three"}
+            </h2>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {group.rooms.map((room) => (
+                <RoomCard key={room.id} room={room} />
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* Suite */}
+      <section id="suite" className="section scroll-mt-28 bg-brand-ink">
+        <div className="container-site grid gap-10 md:grid-cols-2 md:items-center">
+          <div className="rounded-lg overflow-hidden">
+            <RoomPhoto room={suite} sizes="(min-width: 768px) 50vw, 100vw" />
+          </div>
+          <div>
+            <p className="eyebrow !text-brand-amber">Suite · {guestLabel(suite)}</p>
+            <h2 className="heading mt-4 !text-white">The Suite</h2>
+            <p className="mt-4 text-lg text-stone-300 leading-relaxed">{suiteCategory.summary}</p>
+            <ul className="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+              {suiteCategory.amenities.map((amenity) => (
+                <li key={amenity} className="flex items-center gap-2.5 text-stone-200">
+                  <FontAwesomeIcon icon={faCheck} className="w-3.5 h-3.5 text-brand-amber" />
+                  {amenity}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href={site.phones.booking.tel} className="btn-primary">
+                <FontAwesomeIcon icon={faPhone} className="w-3.5 h-3.5" />
+                Call to book
+              </Link>
+              <Link href={whatsappFor(suite)} target="_blank" className="btn-outline-light">
+                <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" />
+                WhatsApp
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white border-b border-brand-line">
         <div className="container-site">
           <p className="eyebrow">Why Hotel Landmark</p>
           <h2 className="heading mt-4 max-w-2xl">The business hotel Malda keeps coming back to</h2>
