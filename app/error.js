@@ -1,26 +1,29 @@
 "use client";
-import styles from "./page.module.css";
-import Link from "next/link";
 
-export default function Error({ error, reset }) {
+import Link from "next/link";
+import { site } from "@/lib/site";
+
+export default function Error({ reset }) {
   return (
-    <div className="text-center m-auto max-w-[80%] mt-20 text-xl">
-      <p>Oh no! Our hotel site is under maintainence.</p>
-      <p>
-        Please call directly at <strong>+91-9641693184</strong> or whatsapp here
-        <Link href="tel:+919641693184" target="_blank">
-          <div className="text-center text-3xl bg-lime-700 hover:bg-lime-800 text-white font-bold px-8 py-4 rounded-xl my-8 cursor-pointer shadow-xl shadow-lime-600">
-            9641693184
-          </div>
-        </Link>
-        for booking purpose or any other queries.
-      </p>
-      <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
-      />
-    </div>
+    <section className="section">
+      <div className="container-site max-w-xl text-center">
+        <p className="eyebrow">Something went wrong</p>
+        <h1 className="heading mt-4">This page didn&apos;t load</h1>
+        <p className="lead mt-4">
+          You can still book or ask us anything by phone or WhatsApp.
+        </p>
+        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+          <Link href={site.phones.booking.tel} className="btn-primary">
+            Call {site.phones.booking.display}
+          </Link>
+          <Link href={site.phones.booking.whatsapp} target="_blank" className="btn-outline">
+            WhatsApp us
+          </Link>
+          <button onClick={() => reset()} className="btn-outline">
+            Try again
+          </button>
+        </div>
+      </div>
+    </section>
   );
 }

@@ -1,36 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
+    "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./lib/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
+      // Palette is taken from the Hotel Landmark logo (HL.png / logo.png):
+      // amber fill, deep-brown outer triangle, rust inner triangle.
       colors: {
-        luxury: {
-          navy: '#1a2332',
-          gold: '#d4af37',
-          'gold-light': '#e5c158',
-          cream: '#faf9f6',
-          charcoal: '#2d3436',
-          rose: '#8b4f5c',
-          'gray-dark': '#333333',
+        brand: {
+          amber: "#F9AE3C",
+          "amber-dark": "#E8961A",
+          brown: "#5E3A12",
+          ink: "#2E1D0E",
+          rust: "#8A3B2E",
+          sand: "#F7F3EC",
+          line: "#E7DFD2",
         },
       },
       fontFamily: {
-        itim: ["var(--font-itim)"],
-        heading: ['Playfair Display', 'serif'],
-        body: ['Inter', 'sans-serif'],
-      },
-      backgroundImage: {
-        'gradient-luxury': 'linear-gradient(135deg, #1a2332 0%, #2d3436 100%)',
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
       },
     },
   },
   plugins: [],
-}
-
+};

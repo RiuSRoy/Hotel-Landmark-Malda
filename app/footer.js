@@ -1,132 +1,86 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
-import { googleBusinessProfile } from "./layout";
+import { faPhone, faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { site } from "@/lib/site";
+
+const linkClass = "text-stone-300 hover:text-brand-amber transition-colors";
 
 export default function Footer() {
   return (
-    <footer className="bg-luxury-navy text-white">
-      <div className="luxury-container py-12">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Brand Section */}
-          <div className="md:col-span-1">
-            <div className="flex items-center mb-4">
-              <Image
-                src="/HL.png"
-                width={80}
-                height={80}
-                alt="Hotel Landmark Malda"
-                className="object-contain"
-              />
-            </div>
-            <h3 className="text-2xl font-heading font-bold mb-2">
-              Hotel <span className="text-luxury-gold">Landmark</span>
-            </h3>
-            <p className="text-gray-300 text-sm">
-              Experience luxury hospitality in the heart of Malda
+    <footer className="bg-brand-ink text-stone-300">
+      <div className="container-site py-14">
+        <div className="grid gap-10 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <Image
+              src="/logo.png"
+              width={200}
+              height={100}
+              alt="Hotel Landmark Malda – feel the difference"
+              className="h-auto w-44"
+            />
+            <p className="mt-5 text-sm leading-relaxed max-w-xs">
+              A business hotel in the centre of Malda, with a banquet hall and in-house restaurant
+              under the same roof.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-heading font-semibold text-lg mb-4 text-luxury-gold">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="text-gray-300 hover:text-luxury-gold transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/hotel-malda-wb" className="text-gray-300 hover:text-luxury-gold transition-colors">
-                  Rooms
-                </Link>
-              </li>
-              <li>
-                <Link href="/banquet-malda-wb" className="text-gray-300 hover:text-luxury-gold transition-colors">
-                  Banquet Hall
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-300 hover:text-luxury-gold transition-colors">
-                  Contact Us
-                </Link>
-              </li>
+          <div className="md:col-span-2">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Explore</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/hotel-malda-wb" className={linkClass}>Rooms</Link></li>
+              <li><Link href="/banquet-malda-wb" className={linkClass}>Banquet &amp; Restaurant</Link></li>
+              <li><Link href="/contact" className={linkClass}>Contact</Link></li>
+              <li><Link href="/privacy-policy" className={linkClass}>Privacy Policy</Link></li>
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-heading font-semibold text-lg mb-4 text-luxury-gold">Contact</h4>
+          <div className="md:col-span-3">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Contact</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <FontAwesomeIcon icon={faPhone} className="w-4 h-4 text-luxury-gold mt-1" />
+              <li className="flex gap-3">
+                <FontAwesomeIcon icon={faPhone} className="w-4 h-4 mt-0.5 text-brand-amber" />
                 <div>
-                  <Link href="tel:+917501263184" className="text-gray-300 hover:text-luxury-gold transition-colors block">
-                    +91-75012 63184
+                  <Link href={site.phones.booking.tel} className={`${linkClass} block`}>
+                    {site.phones.booking.display}
                   </Link>
-                  <span className="text-gray-400">+(03512) 221184</span>
+                  <Link href={site.phones.reception.tel} className={`${linkClass} block`}>
+                    {site.phones.reception.display}
+                  </Link>
+                  <span className="text-stone-400">{site.phones.landlines[0]}</span>
                 </div>
               </li>
-              <li className="flex items-start gap-2">
-                <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 text-luxury-gold mt-1" />
-                <Link href="mailto:landmark2286@gmail.com" className="text-gray-300 hover:text-luxury-gold transition-colors">
-                  landmark2286@gmail.com
-                </Link>
-              </li>
-              <li className="flex items-start gap-2">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="w-4 h-4 text-luxury-gold mt-1" />
-                <span className="text-gray-300">
-                  Rabindra Avenue, Malda,<br />West Bengal, 732101
-                </span>
+              <li className="flex gap-3">
+                <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mt-0.5 text-brand-amber" />
+                <Link href={`mailto:${site.email}`} className={linkClass}>{site.email}</Link>
               </li>
             </ul>
           </div>
 
-          {/* Additional Links */}
-          <div>
-            <h4 className="font-heading font-semibold text-lg mb-4 text-luxury-gold">More</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link 
-                  href={googleBusinessProfile} 
-                  target="_blank"
-                  className="text-gray-300 hover:text-luxury-gold transition-colors"
-                >
-                  Get Directions
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="https://g.page/r/CY7o7t2FEsdPEBM/review" 
-                  target="_blank"
-                  className="text-gray-300 hover:text-luxury-gold transition-colors"
-                >
-                  Write a Review
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/privacy-policy-royal-touch" 
-                  className="text-gray-300 hover:text-luxury-gold transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
+          <div className="md:col-span-3">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Find us</h4>
+            <p className="flex gap-3 text-sm">
+              <FontAwesomeIcon icon={faLocationDot} className="w-4 h-4 mt-0.5 text-brand-amber" />
+              <span>
+                {site.address.line1},<br />
+                {site.address.line2},<br />
+                {site.address.region}
+              </span>
+            </p>
+            <div className="mt-4 flex flex-col gap-2 text-sm">
+              <Link href={site.links.googleBusinessProfile} target="_blank" className={linkClass}>
+                Get directions →
+              </Link>
+              <Link href={site.links.googleReview} target="_blank" className={linkClass}>
+                Review us on Google →
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-700 pt-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Hotel Landmark Malda. All rights reserved.
-            </p>
-            <p className="text-gray-400 text-sm text-center md:text-right">
-              Designed with excellence for luxury hospitality
-            </p>
-          </div>
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-2 text-xs text-stone-400">
+          <p>© {new Date().getFullYear()} Hotel Landmark, Malda. All rights reserved.</p>
+          <p>{site.tagline}.</p>
         </div>
       </div>
     </footer>

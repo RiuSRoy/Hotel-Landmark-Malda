@@ -2,44 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
-
 @layer base {
   body {
-    @apply bg-luxury-cream text-luxury-gray-dark font-body;
+    @apply bg-brand-sand text-stone-700 font-sans antialiased;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+
+  h1, h2, h3, h4 {
+    @apply font-display text-brand-ink tracking-tight;
   }
 }
 
 @layer components {
-  .luxury-btn-primary {
-    @apply bg-luxury-gold hover:bg-luxury-gold-light text-luxury-navy font-semibold px-8 py-3 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  .container-site {
+    @apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8;
   }
-  
-  .luxury-btn-secondary {
-    @apply bg-luxury-navy hover:bg-luxury-charcoal text-luxury-cream font-semibold px-8 py-3 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl;
-  }
-  
-  .luxury-card {
-    @apply bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
-  }
-  
-  .luxury-section {
+
+  .section {
     @apply py-16 md:py-24;
   }
-  
-  .luxury-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+
+  /* Small uppercase label above a heading, with the amber rule from the logo's base line */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand-rust;
   }
-  
-  .luxury-heading {
-    @apply text-4xl md:text-5xl lg:text-6xl font-heading text-luxury-navy mb-6;
+  .eyebrow::before {
+    content: "";
+    @apply block h-0.5 w-8 bg-brand-amber;
   }
-  
-  .luxury-subheading {
-    @apply text-2xl md:text-3xl font-heading text-luxury-charcoal mb-4;
+
+  .heading {
+    @apply text-3xl md:text-4xl font-semibold leading-tight;
+  }
+
+  .lead {
+    @apply text-lg leading-relaxed text-stone-600;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-semibold transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-brand-amber text-brand-ink hover:bg-brand-amber-dark;
+  }
+  .btn-dark {
+    @apply btn bg-brand-ink text-white hover:bg-brand-brown;
+  }
+  .btn-outline {
+    @apply btn border border-brand-ink/20 text-brand-ink hover:border-brand-ink hover:bg-white;
+  }
+  .btn-outline-light {
+    @apply btn border border-white/40 text-white hover:border-white hover:bg-white/10;
+  }
+
+  .card {
+    @apply bg-white rounded-lg border border-brand-line overflow-hidden;
+  }
+
+  .text-link {
+    @apply font-semibold text-brand-rust underline decoration-brand-amber decoration-2 underline-offset-4 hover:text-brand-ink;
   }
 }
