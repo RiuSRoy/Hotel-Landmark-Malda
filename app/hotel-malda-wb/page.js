@@ -96,7 +96,13 @@ function RoomCard({ room }) {
           </span>
         </div>
         <h3 className="mt-4 text-2xl font-semibold">{room.name}</h3>
+        {room.size && (
+          <p className="mt-1 text-sm font-medium text-brand-rust">
+            {room.size}{room.beds ? ` · ${room.beds}` : ""}
+          </p>
+        )}
         <p className="mt-2 mb-6 text-sm text-stone-600">{category.amenities.join(" · ")}</p>
+        {room.note && <p className="-mt-3 mb-6 text-sm text-stone-500">{room.note}</p>}
         <div className="mt-auto pt-6 border-t border-brand-line">
           <BookingButtons room={room} />
         </div>
@@ -145,6 +151,10 @@ export default function Rooms() {
               <span className="font-semibold text-brand-ink">Breakfast &amp; room service: </span>
               Complimentary breakfast is served in our restaurant from {site.breakfastHours} and is not
               available as room service. Room service is available for lunch and dinner.
+            </p>
+            <p className="mt-3">
+              <span className="font-semibold text-brand-ink">Laundry: </span>
+              Paid laundry service is available at {site.laundryRate}.
             </p>
           </div>
         </div>
@@ -247,8 +257,8 @@ export default function Rooms() {
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               { src: "/rooms/Reception.jpg", alt: "Hotel Landmark Malda reception", label: "Reception" },
-              { src: "/site-photo/rest-1.jpg", alt: "Restaurant at Hotel Landmark Malda", label: "Restaurant", position: "object-[center_30%]" },
-              { src: "/site-photo/banq-2.jpeg", alt: "Banquet hall at Hotel Landmark Malda", label: "Banquet hall" },
+              { src: "/site-photo/rest-2.jpg", alt: "Restaurant at Hotel Landmark Malda", label: "Restaurant", position: "object-[center_30%]" },
+              { src: "/site-photo/banq-5.jpeg", alt: "Banquet hall at Hotel Landmark Malda", label: "Banquet hall" },
             ].map((photo) => (
               <figure key={photo.label}>
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
